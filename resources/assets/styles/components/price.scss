@@ -1,0 +1,515 @@
+.price-block {
+  padding: 80px 0;
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    @media screen and (min-width: 1920px) {
+      grid-gap: 32px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      grid-gap: 12px;
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__img {
+    border-radius: 16px 16px 0 0;
+    max-height: 250px;
+    width: 100%;
+  }
+
+  &__box {
+    border-left: 1px solid #c5c5c5;
+    border-right: 1px solid #c5c5c5;
+    border-bottom: 1px solid #c5c5c5;
+    border-radius: 0 0 16px 16px;
+
+    @media screen and (min-width: 1920px) {
+      padding: 12px 20px 86px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      padding: 10px 15px 86px;
+    }
+
+    .qty,
+    .coal,
+    .time,
+    .addition {
+      height: 1.3em;
+    }
+
+    .tobacco,
+    .set {
+      height: 3.9em;
+    }
+  }
+
+  &__name {
+    font-family: $muller;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: #333;
+    padding-bottom: 4px;
+
+    @media screen and (min-width: 1920px) {
+      font-size: 32px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      font-size: 26px;
+    }
+  }
+
+  &__sale {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    height: 22px;
+    padding-bottom: 12px;
+
+    & > a {
+      cursor: initial;
+      background-color: $red;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      color: #fff;
+      padding: 2px 11px;
+      border-radius: 5px;
+
+      @media screen and (min-width: 1920px) {
+        font-size: 14px;
+      }
+
+      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__info,
+  &__set {
+    display: grid;
+    letter-spacing: 0.01em;
+    color: #4f4f4f;
+    grid-gap: 0.5em 5px;
+
+    @media screen and (min-width: 1920px) {
+      font-size: 16px;
+      grid-template-columns: 104px 1fr;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      font-size: 14px;
+      grid-template-columns: 80px 1fr;
+    }
+
+    span:nth-of-type(2n) {
+      font-weight: 600;
+    }
+  }
+
+  &__info {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #c5c5c5;
+    margin-bottom: 12px;
+  }
+
+  &__absolute {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (min-width: 1920px) {
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+    }
+  }
+
+  &__price {
+    letter-spacing: 0.02em;
+
+    &-actual {
+      font-weight: 900;
+      display: inline-block;
+      color: $main;
+      white-space: nowrap;
+
+      @media screen and (min-width: 1920px) {
+        font-size: 32px;
+        margin-right: 8px;
+      }
+
+      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        font-size: 20px;
+        margin-right: 6px;
+      }
+    }
+
+    &-old {
+      white-space: nowrap;
+      font-weight: 500;
+      text-decoration-line: line-through;
+      color: #4f4f4f;
+
+      @media screen and (min-width: 1920px) {
+        font-size: 20px;
+      }
+
+      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__order {
+    @media screen and (min-width: 1920px) {
+      padding: 10px 47px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      padding: 8px 28px;
+    }
+  }
+
+  &__form {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    top: 100%;
+    z-index: -1;
+    bottom: 0;
+    transition: all 0.3s ease;
+
+    @media screen and (min-width: 1920px) {
+      padding: 24px 20px 88px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      padding: 20px 15px 88px;
+    }
+
+    &.active {
+      z-index: 2;
+
+      @media screen and (min-width: 1920px) {
+        top: 25%;
+      }
+
+      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        top: 20%;
+      }
+    }
+
+    &-close {
+      position: absolute;
+      right: 24px;
+      top: 24px;
+      cursor: pointer;
+      width: 13px;
+      height: 13px;
+
+      &::before,
+      &::after {
+        content: "";
+        width: 17px;
+        height: 1px;
+        background-color: $black;
+        position: absolute;
+        left: 0;
+        transform-origin: left;
+      }
+
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
+    }
+
+    &-title {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $black;
+
+      @media screen and (min-width: 1920px) {
+        font-size: 18px;
+        padding-bottom: 16px;
+      }
+
+      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        font-size: 16px;
+        padding-bottom: 14px;
+      }
+    }
+
+    &-row {
+      display: flex;
+      align-items: center;
+
+      @media screen and (min-width: 1920px) {
+        justify-content: space-between;
+        padding-bottom: 24px;
+      }
+
+      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+    }
+
+    &-item {
+      width: 100%;
+    }
+  }
+
+  &__qty {
+    font-family: $muller;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: 1920px) {
+      width: calc(50% - 9px);
+      border-radius: 16px;
+      padding: 8px 25px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      width: 100%;
+      border-radius: 14px;
+      padding: 5px 20px;
+      margin-bottom: 10px;
+    }
+
+    label {
+      text-align: center;
+      color: #323232;
+      display: block;
+      width: 100%;
+      font-size: 12px;
+
+      @media screen and (min-width: 1920px) {
+        padding-bottom: 4px;
+      }
+
+      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        padding-bottom: 10px;
+      }
+    }
+
+    input {
+      width: 3em;
+      background-color: transparent;
+      font-weight: 500;
+      font-size: 18px;
+      text-align: center;
+      border: none;
+    }
+
+    .btn {
+      border: none;
+      font-weight: 500;
+      font-size: 18px;
+      color: #323232;
+      cursor: pointer;
+      background-color: transparent;
+    }
+  }
+
+  &__delivery {
+    position: relative;
+
+    @media screen and (min-width: 1920px) {
+      margin-bottom: 16px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      margin-bottom: 10px;
+    }
+
+    label {
+      border-radius: 15px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+
+      @media screen and (min-width: 1920px) {
+        padding: 10px 20px;
+      }
+
+      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        padding: 0 15px;
+      }
+
+      &::before {
+        font-weight: 300;
+
+        @media screen and (min-width: 1920px) {
+          font-size: 40px;
+          line-height: 16px;
+          margin-right: 8px;
+        }
+
+        @media screen and (min-width: 1280px) and (max-width: 1919px) {
+          font-size: 24px;
+          line-height: 26px;
+          margin-right: 5px;
+        }
+      }
+
+      &::after {
+        white-space: nowrap;
+        font-family: $muller;
+        font-weight: 500;
+
+        @media screen and (min-width: 1920px) {
+          font-size: 12px;
+        }
+
+        @media screen and (min-width: 1280px) and (max-width: 1919px) {
+          font-size: 10px;
+          line-height: 26px;
+        }
+      }
+    }
+
+    input {
+      opacity: 0;
+      position: absolute;
+      z-index: -1;
+
+      &:checked + label {
+        border: 1px solid $red;
+
+        &::before {
+          content: "-";
+          color: $red;
+        }
+
+        &::after {
+          content: "Удалить быструю доставку";
+          color: $red;
+        }
+      }
+
+      &:not(:checked) + label {
+        border: 1px solid $green;
+
+        &::before {
+          content: "+";
+          color: $green;
+        }
+
+        &::after {
+          content: "Добавить быструю доставку (+ 500 ₽) ";
+          color: $green;
+        }
+      }
+    }
+  }
+
+  &__coal-amount {
+    letter-spacing: 0.01em;
+    color: #4f4f4f;
+
+    @media screen and (min-width: 1920px) {
+      font-size: 16px;
+      padding-bottom: 12px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      font-size: 14px;
+      padding-bottom: 10px;
+    }
+
+    .coal {
+      font-weight: 600;
+    }
+  }
+
+  &__total {
+    color: #323232;
+
+    @media screen and (min-width: 1920px) {
+      font-size: 14px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      font-size: 12px;
+    }
+
+    .total {
+      color: $main;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+
+      @media screen and (min-width: 1920px) {
+        font-size: 24px;
+      }
+
+      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__submit {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 42px;
+  }
+
+  &__all {
+    text-align: center;
+
+    @media screen and (min-width: 1920px) {
+      margin: 115px auto 0;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      margin: 80px auto 0;
+    }
+
+    .button {
+      @media screen and (min-width: 1920px) {
+        padding: 17px 88px;
+      }
+
+      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        padding: 15px 50px;
+      }
+    }
+  }
+}

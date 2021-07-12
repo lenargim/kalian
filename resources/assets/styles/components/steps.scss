@@ -1,0 +1,103 @@
+.steps {
+  background: url("../images/steps-bg.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+  padding: 80px 0 40px;
+  color: #fff;
+  position: relative;
+
+  &__title.title {
+    padding-bottom: 16px;
+    color: #fff;
+  }
+
+  &__desc {
+    max-width: 559px;
+    margin: 0 auto 40px;
+    text-align: center;
+
+    @media screen and (min-width: 1920px) {
+      font-size: 24px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      font-size: 18px;
+    }
+  }
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+    @media screen and (min-width: 1920px) {
+      grid-gap: 30px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      grid-gap: 16px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__svg {
+    @media screen and (min-width: 1920px) {
+      margin-bottom: 40px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      margin-bottom: 25px;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__number {
+    color: $main;
+    font-weight: 500;
+
+    @media screen and (min-width: 1920px) {
+      font-size: 36px;
+      padding-bottom: 12px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      font-size: 26px;
+      padding-bottom: 10px;
+    }
+  }
+
+  &__text {
+    @media screen and (min-width: 1920px) {
+      font-size: 22px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      font-size: 16px;
+    }
+  }
+
+  &__box {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 60px 0;
+  }
+
+  &__link {
+    padding-top: 40px;
+    text-align: center;
+
+    .button {
+      padding: 12px 40px;
+      background-color: transparent;
+      color: $main;
+      border: 1px solid $main;
+    }
+  }
+}

@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $font;
+  line-height: 1.3;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  min-height: 100%;
+  min-width: 100%;
+  overflow-x: hidden;
+}
+
+input,
+textarea {
+  font-family: $muller;
+}
+
+header,
+footer,
+section {
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 1920px) {
+    max-width: 1800px;
+  }
+
+  @media screen and (min-width: 1280px) and (max-width: 1919px) {
+    max-width: 1200px;
+  }
+
+  @media screen and (max-width: 1280px) {
+    max-width: unset;
+  }
+}
+
+ol,
+ul,
+li,
+p,
+h1,
+h2,
+h3 {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+a {
+  color: $main2;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+input[type=search]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type=search]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+textarea {
+  resize: none;
+  font-size: 16px;
+}
+
+main.main {
+  min-height: 90vh;
+  overflow: hidden;
+  background-color: $colorBg;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.img {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.button {
+  font-family: "Muller", sans-serif;
+  background-color: $main;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  display: inline-flex;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  @media screen and (min-width: 1920px) {
+    border-radius: 55px;
+    font-size: 24px;
+  }
+
+  @media screen and (min-width: 1280px) and (max-width: 1919px) {
+    font-size: 16px;
+    border-radius: 30px;
+  }
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.icon {
+  fill: $main2;
+}
+
+.call {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+
+  &__phone {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-family: $muller;
+    font-weight: 700;
+    line-height: 1;
+    text-align: right;
+    color: #fff;
+
+    @media screen and (min-width: 1920px) {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .help {
+      fill: #fff;
+
+      @media screen and (min-width: 1920px) {
+        margin-right: 17px;
+      }
+
+      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__callback {
+    font-family: $muller;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    color: $main;
+    cursor: pointer;
+
+    @media screen and (min-width: 1920px) {
+      font-size: 24px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      font-size: 18px;
+    }
+  }
+}
+
+.orange {
+  color: $main;
+}
+
+h2.title {
+  font-family: $muller;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: $black;
+
+  @media screen and (min-width: 1920px) {
+    font-size: 48px;
+    padding-bottom: 60px;
+  }
+
+  @media screen and (min-width: 1280px) and (max-width: 1919px) {
+    font-size: 38px;
+    padding-bottom: 45px;
+  }
+}

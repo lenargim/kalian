@@ -1,0 +1,21 @@
+@import "common/variables";
+@import "common/fonts";
+
+// @import "~some-node-module";
+
+@import "~slick-carousel/slick/slick";
+
+/** Import theme styles */
+@import "common/global";
+@import "common/slick";
+@import "common/form";
+@import "common/header";
+@import "common/footer";
+@import "components/banner";
+@import "components/actions";
+@import "components/covid";
+@import "components/price";
+@import "components/brands";
+@import "components/steps";
+@import "components/reviews";
+@import "components/faq";
