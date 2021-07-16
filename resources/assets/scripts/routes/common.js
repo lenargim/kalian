@@ -132,3 +132,69 @@ function changeTotal(parent) {
   }
 }
 /*  Конец Калькулятор */
+
+$('.open-modal').on('click', function() {
+  let content = $(this).html();
+  $('.modal-img__box').html(content);
+  $('.modal-img').addClass('active');
+  $('.overlay').addClass('active');
+})
+
+$('.modal__close').on('click', function() {
+  $('.overlay').removeClass('active')
+  $('.modal').removeClass('active')
+  $('.modal-img__box').html('');
+})
+
+$('.price-block__form-item').on('input', function(){
+  if ( $(this).hasClass('name') )  {
+    $(this).val().length > 1 ? $(this).addClass('filled') : $(this).removeClass('filled');
+  } else if ( $(this).hasClass('tel') ) {
+    $(this).val().length == 17 ? $(this).addClass('filled') : $(this).removeClass('filled')
+  }
+  let form = $(this).parents('.price-block__form');
+  checkForm(form);
+})
+
+function checkForm(form) {
+  if ( form.find('.tel').hasClass('filled') &&  form.find('.name').hasClass('filled')  ) {
+    form.find('.price-block__submit').prop('disabled', false);
+  } else {
+    form.find('.price-block__submit').prop('disabled', true);
+  }
+}
+
+$('.price-block__form').on('submit', function(e){
+  e.preventDefault();
+  $('.modal-order').addClass('active');
+  $('.overlay').addClass('active');
+  let form = $('.modal-order .wpcf7-form')
+  let item = $(this).parents('.price-block__item');
+  let id = item.data('id')
+  $('.modal-order__back').attr('data-id', id);
+  form.find('.modal-order__form-input, .modal-order__form-title').attr('readonly', false);
+  form.find('.modal-order__form-title').val( item.find('.price-block__name').text() )
+  form.find('.shisha').val( item.find('.input-shisha').val() + ' шт' )
+  form.find('.cups').val( item.find('.input-cups').val() + ' шт' )
+  form.find('.coal').val( item.find('.price-block__coal-amount .coal').text() )
+  form.find('.time').val( item.find('.time').text() )
+  form.find('.tabak').val( item.find('.tobacco').text() )
+  let delivery = item.find('.input-delivery').prop('checked');
+  delivery == true
+  ? form.find('.delivery').removeClass('red').val('Есть (+ 500 ₽)') : form.find('.delivery').addClass('red').val('Нет')
+  form.find('.name').val( item.find('.name').val() )
+  form.find('.tel').val( item.find('.tel').val() )
+  form.find('.modal-order__form-price').val( item.find('.total').text() )
+  form.find('.modal-order__form-input, .modal-order__form-title').attr('readonly', true);
+})
+
+$('.modal-order__back').on('click', function(){
+  let id = $(this).attr('data-id');
+  $('.overlay').removeClass('active')
+  $('.modal').removeClass('active')
+  $(`.price-block__item[data-id="${id}"]`).find('.name').focus()
+})
+
+document.addEventListener( 'wpcf7mailsent', function( ) {
+  document.location.href = '/spasibo';
+}, false );

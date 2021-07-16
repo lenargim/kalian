@@ -1,11 +1,20 @@
-<div class="price-block">
+<?php
+/**
+ * Template Name: price
+ */
+?>
+
+@extends('layouts.app')
+
+@section('content')
+  @include('partials.breadcrumbs')
   <div class="container">
-    <h2 class="title">Прайс на наши кальяны</h2>
-    <div class="price-block__wrap">
+    {{ the_content() }}
+    <div class="price-block__wrap price__wrap">
       @php
         global $post;
         $goodsArgs = [
-         'numberposts' => 4,
+         'numberposts' => -1,
          'post_type' => 'goods',
         ];
         $goods = get_posts( $goodsArgs );
@@ -40,7 +49,7 @@
               <div class="price-block__price">
                 <span class="price-block__price-actual"><span class="calc-price">@php the_field('price') @endphp</span> ₽</span>
                 @if( get_field('old_price') )
-                <span class="price-block__price-old">@php the_field('old_price') @endphp ₽</span>
+                  <span class="price-block__price-old">@php the_field('old_price') @endphp ₽</span>
                 @endif
               </div>
               <div class="price-block__order button">Заказать</div>
@@ -77,6 +86,5 @@
       @endforeach
       @php wp_reset_postdata() @endphp
     </div>
-    <div class="price-block__all"><a href="/price" class="button">Весь ассортимент</a></div>
   </div>
-</div>
+@endsection

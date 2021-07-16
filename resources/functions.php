@@ -169,3 +169,80 @@ function my_sale(){
         //'rewrite'       => array( 'slug' => 'the_writer' ), // свой слаг в URL
     ));
 }
+
+
+add_filter('post_type_labels_post', 'rename_posts_labels');
+function rename_posts_labels( $labels ){
+    $new = array(
+        'name'                  => 'Отзывы',
+        'singular_name'         => 'Отзыв',
+        'add_new'               => 'Добавить отзыв',
+        'add_new_item'          => 'Добавить отзыв',
+        'edit_item'             => 'Редактировать отзыв',
+        'new_item'              => 'Новый отзыв',
+        'view_item'             => 'Просмотреть отзыв',
+        'search_items'          => 'Поиск отзывов',
+        'not_found'             => 'Отзывов не найдено.',
+        'not_found_in_trash'    => 'Отзывов в корзине не найдено.',
+        'parent_item_colon'     => '',
+        'all_items'             => 'Все отзывы',
+        'archives'              => 'Архивы отзывов',
+        'insert_into_item'      => 'Вставить в отзыв',
+        'uploaded_to_this_item' => 'Загруженные для этого отзыва',
+        'featured_image'        => 'Миниатюра отзыва',
+        'filter_items_list'     => 'Фильтровать список отзывов',
+        'items_list_navigation' => 'Навигация по списку отзывов',
+        'items_list'            => 'Список отзывов',
+        'menu_name'             => 'Отзывы',
+        'name_admin_bar'        => 'Отзыв', // пункте "добавить"
+    );
+
+    return (object) array_merge( (array) $labels, $new );
+}
+
+
+function login_redirect(){
+    if( strpos($_SERVER['REQUEST_URI'], 'login')!==false )
+        $loc = '/wp/wp-login.php';
+    elseif( strpos($_SERVER['REQUEST_URI'], 'admin')!==false )
+        $loc = '/wp/wp-admin/';
+}
+
+add_action('template_redirect', 'login_redirect');
+
+
+
+add_filter( 'wpcf7_before_send_mail', 'wpcf7_send_mail_telegram' );
+function wpcf7_send_mail_telegram($cf7)
+{
+    $mail = $cf7->prop('mail');
+    if ($mail) {
+        $token = "1795609045:AAEs10wLpKjNpvWeeA8KymGzYiAWeSSF7Qs";
+        $chat_id = "760773666";
+        $shisha = $_POST['text-1'];
+        $shisha_qty = $_POST['text-2'];
+        $cups_qty = $_POST['text-3'];
+        $coal = $_POST['text-4'];
+        $time = $_POST['text-5'];
+        $delivery = urlencode($_POST['text-6']);
+        $name = $_POST['text-7'];
+        $phone = urlencode($_POST['text-8']);
+        $total = $_POST['text-9'];
+        $wpcf7 = WPCF7_ContactForm::get_current();
+        $arr = [
+            'Город:'    =>  'Самара',
+            'Кальян:'   =>  $shisha . ' ' . $shisha_qty,
+            'Чаши:'     =>  $cups_qty,
+            'Уголь:'    =>  $coal,
+            'Время:'    =>  $time,
+            'Доставка:' =>  $delivery,
+            'Имя:'      =>  $name,
+            'Телефон:'  =>  $phone,
+            'Итого:'    =>  $total
+        ];
+        foreach($arr as $key => $value) {
+            $txt .= "<b>".$key."</b> ".$value."%0A";
+        };
+        $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
+    }
+}

@@ -38,3 +38,17 @@
     </div>
   </div>
 </footer>
+<div class="overlay">
+  <div class="modal modal-img">
+    <div class="modal__close"></div>
+    <div class="modal-img__box"></div>
+  </div>
+  <div class="modal modal-order">
+    <div class="modal__close"></div>
+    <div class="modal-order__box">
+      <div class="modal-order__title">проверьте ваш заказ</div>
+      <button class="modal-order__back">Вернуться назад</button>
+      @php echo do_shortcode('[contact-form-7 id="142" title="Order"]') @endphp
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.breadcrumbs {
+  padding: 100px 0 60px;
+
+  a {
+    font-family: $muller;
+    font-size: 18px;
+    letter-spacing: 0.01em;
+    color: $black;
+
+    &::after {
+      content: "/";
+    }
+  }
+
+  h1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    white-space: nowrap;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: #c4c4c4;
+      margin-left: 33px;
+    }
+  }
+}
