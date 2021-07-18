@@ -10,7 +10,7 @@
           @include('icon::xopoce', ['class' => 'xopoce'])
           <span>Суши-shop</span>
         </a>
-        <a href="/covid">COVID-19</a>
+        <a href="/faq#covid">COVID-19</a>
       </div>
       <div class="footer__side">
         <div class="call">

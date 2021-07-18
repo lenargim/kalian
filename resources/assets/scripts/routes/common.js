@@ -125,7 +125,6 @@ function changeTotal(parent) {
     cupsSum = Math.round( extraCupsPrice * (half + 0.8*quarter + 0.7*(extraCupsQty-half-quarter)) )
   }
   let totalSum = shishaSum+cupsSum+deliverySum;
-  //total.html(shishaSum+cupsSum+deliverySum + '₽')
   total.html(`Итого: <span class="total">${totalSum}₽</span>`)
  if (!totalSum || totalSum == 'NaN₽' ) {
     total.html('<span class="total">Уточните заполнив форму</span>')
@@ -133,7 +132,7 @@ function changeTotal(parent) {
 }
 /*  Конец Калькулятор */
 
-$('.open-modal').on('click', function() {
+$('.reviews-block__item-box').on('click', '.open-modal' , function() {
   let content = $(this).html();
   $('.modal-img__box').html(content);
   $('.modal-img').addClass('active');

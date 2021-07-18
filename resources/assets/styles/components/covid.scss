@@ -42,3 +42,25 @@
     }
   }
 }
+
+.covid {
+  padding-top: 65px;
+
+  h2.title {
+    text-align: left;
+    padding-bottom: 60px;
+    text-transform: uppercase;
+  }
+
+  &__wrap {
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    padding-top: 60px;
+  }
+
+  &__iframe {
+    width: 100%;
+    height: 485px;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+}

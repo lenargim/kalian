@@ -1,4 +1,4 @@
-.reviews {
+.reviews-block {
   padding: 60px 0 157px;
   background-color: #fff;
 
@@ -97,7 +97,7 @@
       grid-template-columns: repeat(5, 1fr);
 
       @media screen and (min-width: 1920px) {
-        grid-gap: 24px;
+        grid-gap: 40px 24px;
       }
 
       @media screen and (min-width: 1280px) and (max-width: 1919px) {
@@ -129,6 +129,25 @@
         left: 0;
         background-color: $main2;
       }
+    }
+  }
+}
+
+.reviews-page {
+  padding-bottom: 120px;
+
+  &__wrap {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 60px;
+
+    @media screen and (min-width: 1920px) {
+      gap: 43px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      gap: 24px;
     }
   }
 }

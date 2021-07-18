@@ -25,7 +25,7 @@
       @php wp_reset_postdata() @endphp
     </div>
     <div class="actions-slider__more">
-      <a href="/actions" class="button">Еще акции</a>
+      <a href="/sale" class="button">Еще акции</a>
     </div>
   </div>
 </div>

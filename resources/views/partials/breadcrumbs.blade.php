@@ -1,6 +1,12 @@
 <div class="breadcrumbs">
   <div class="container">
     <a href="/">Главная</a>
-    <h1>{{ the_title() }}</h1>
+    @if(is_archive())
+      <h1>{{ the_archive_title() }}</h1>
+    @elseif (is_single())
+      <h1>Акции</h1>
+    @else
+      <h1>@php wp_title('', true) @endphp</h1>
+    @endif
   </div>
 </div>
