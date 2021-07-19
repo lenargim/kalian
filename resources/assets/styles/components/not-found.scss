@@ -1,0 +1,110 @@
+.not-found {
+  padding: 136px 0;
+
+  &__wrap {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    @media screen and (min-width: 1920px) {
+      gap: 83px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      gap: 40px;
+    }
+  }
+
+  .icon {
+    @media screen and (min-width: 1920px) {
+      min-width: 251px;
+      height: 251px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      min-width: 200px;
+      height: 200px;
+    }
+  }
+
+  &__text {
+    font-family: $muller;
+    letter-spacing: 0.01em;
+  }
+
+  &__title {
+    font-weight: 700;
+
+    @media screen and (min-width: 1920px) {
+      font-size: 72px;
+      padding-bottom: 22px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      font-size: 46px;
+      padding-bottom: 16px;
+    }
+  }
+
+  &__desc {
+    @media screen and (min-width: 1920px) {
+      font-size: 36px;
+      padding-bottom: 69px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      font-size: 24px;
+      padding-bottom: 50px;
+    }
+  }
+
+  &__menu {
+    font-family: $muller;
+    display: grid;
+    color: $main;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media screen and (min-width: 1920px) {
+      grid-gap: 32px 96px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      grid-gap: 24px 48px;
+    }
+
+    &-wrap {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    .menu-item {
+      display: block;
+    }
+
+    a {
+      color: $main;
+
+      @media screen and (min-width: 1920px) {
+        font-size: 36px;
+      }
+
+      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        font-size: 24px;
+      }
+    }
+
+    .menu-shop a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      .sushi {
+        width: 27px;
+        height: 28px;
+        fill: $main;
+        margin-right: 12px;
+      }
+    }
+  }
+}

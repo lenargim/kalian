@@ -87,4 +87,12 @@
       @php wp_reset_postdata() @endphp
     </div>
   </div>
+  <div class="map">
+    <div class="container">
+      <h2 class="title">Карта доставки</h2>
+      <div class="map__desc">Уточните стоимость доставки, возможно у администратора найдется бонус для вас.
+      </div>
+      @include('partials.map')
+    </div>
+  </div>
 @endsection

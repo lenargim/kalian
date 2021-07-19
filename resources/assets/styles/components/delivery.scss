@@ -17,16 +17,20 @@
       font-size: 22px;
     }
   }
-}
 
-.paying {
-  color: $black;
-  padding: 60px 0 150px;
+  .map {
+    padding-top: 40px;
+  }
 
   h2.title {
     text-align: left;
     padding-bottom: 16px;
   }
+}
+
+.paying {
+  color: $black;
+  padding: 60px 0 150px;
 
   &__desc {
     padding-bottom: 1em;

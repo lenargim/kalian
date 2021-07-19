@@ -520,6 +520,17 @@
 
 .price {
   &__wrap {
-    padding: 40px 0 92px;
+    padding: 40px 0 0;
+  }
+
+  .map {
+    h2.title {
+      padding-bottom: 16px;
+      text-align: left;
+    }
+
+    &__desc {
+      text-align: left;
+    }
   }
 }

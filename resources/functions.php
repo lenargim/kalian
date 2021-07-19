@@ -222,30 +222,42 @@ add_filter('wpcf7_before_send_mail', 'wpcf7_send_mail_telegram');
 function wpcf7_send_mail_telegram($cf7)
 {
     $mail = $cf7->prop('mail');
+    $wpcf7 = WPCF7_ContactForm::get_current();
+    $form_id = $wpcf7->id;
     if ($mail) {
         $token = "1795609045:AAEs10wLpKjNpvWeeA8KymGzYiAWeSSF7Qs";
         $chat_id = "760773666";
-        $shisha = $_POST['text-1'];
-        $shisha_qty = $_POST['text-2'];
-        $cups_qty = $_POST['text-3'];
-        $coal = $_POST['text-4'];
-        $time = $_POST['text-5'];
-        $delivery = urlencode($_POST['text-6']);
-        $name = $_POST['text-7'];
-        $phone = urlencode($_POST['text-8']);
-        $total = $_POST['text-9'];
-        $wpcf7 = WPCF7_ContactForm::get_current();
-        $arr = [
-            'Город:' => 'Самара',
-            'Кальян:' => $shisha . ' ' . $shisha_qty,
-            'Чаши:' => $cups_qty,
-            'Уголь:' => $coal,
-            'Время:' => $time,
-            'Доставка:' => $delivery,
-            'Имя:' => $name,
-            'Телефон:' => $phone,
-            'Итого:' => $total
-        ];
+        $name = $_POST['name'];
+        $phone = urlencode($_POST['phone']);
+        if ( $form_id == 142) {
+            $shisha = $_POST['text-1'];
+            $shisha_qty = $_POST['text-2'];
+            $cups_qty = $_POST['text-3'];
+            $coal = $_POST['text-4'];
+            $time = $_POST['text-5'];
+            $delivery = urlencode($_POST['text-6']);
+            $total = $_POST['text-9'];
+            $arr = [
+                'Город:' => 'Самара',
+                'Тема:' => 'Заказ',
+                'Кальян:' => $shisha . ' ' . $shisha_qty,
+                'Чаши:' => $cups_qty,
+                'Уголь:' => $coal,
+                'Время:' => $time,
+                'Доставка:' => $delivery,
+                'Имя:' => $name,
+                'Телефон:' => $phone,
+                'Итого:' => $total
+            ];
+        } else {
+            $arr = [
+                'Город:' => 'Самара',
+                'Тема:' => 'Обратный звонок',
+                'Имя:' => $name,
+                'Телефон:' => $phone,
+            ];
+        }
+
         foreach ($arr as $key => $value) {
             $txt .= "<b>" . $key . "</b> " . $value . "%0A";
         };

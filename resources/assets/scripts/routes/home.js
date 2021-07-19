@@ -13,7 +13,6 @@ let sliderCounter = $('.banner__slider-counter');
 
 let updateSliderCounter = function (slick) {
   let currentSlide = slick.slickCurrentSlide() + 1;
-  //let slidesCount = slick.slideCount;
   sliderCounter.html(currentSlide);
 };
 
@@ -31,6 +30,7 @@ slider.slick({
   appendArrows: $('.banner__arrow-box'),
   prevArrow: prevArrow,
   nextArrow: nextArrow,
+  draggable: false,
 });
 
 let actionsSlider = $('.actions-slider__slider');
@@ -43,9 +43,9 @@ actionsSlider.slick({
   infinite: false,
 });
 
-$('.faq__questions-item:not(.active)').on('click', function() {
+$('.faq-block__questions-item:not(.active)').on('click', function() {
   $(this).addClass('active').siblings().removeClass('active');
-  $('.faq__answers-item')
+  $('.faq-block__answers-item')
     .hide()
     .eq($(this).index()).fadeIn()
 });

@@ -5,13 +5,6 @@
       @if (has_nav_menu('footer'))
         {!! wp_nav_menu(['menu' => 'footer', 'menu_class' => 'footer__menu']) !!}
       @endif
-      <div class="footer__menu">
-        <a class="footer__sushi" href="https://xopoce.ru/">
-          @include('icon::xopoce', ['class' => 'xopoce'])
-          <span>Суши-shop</span>
-        </a>
-        <a href="/faq#covid">COVID-19</a>
-      </div>
       <div class="footer__side">
         <div class="call">
           <a href="tel:@php the_field('phone',9) @endphp" class="call__phone">
@@ -49,6 +42,23 @@
       <div class="modal-order__title">проверьте ваш заказ</div>
       <button class="modal-order__back">Вернуться назад</button>
       @php echo do_shortcode('[contact-form-7 id="142" title="Order"]') @endphp
+    </div>
+  </div>
+  <div class="modal modal-callback">
+    <div class="modal__close"></div>
+    <div class="modal-callback__box">
+      <div class="modal-callback__title">Закажите звонок</div>
+      <div class="modal-callback__desc">И мы перезвоним вам в ближайшее время</div>
+      @php echo do_shortcode('[contact-form-7 id="182" title="Callback"]') @endphp
+    </div>
+  </div>
+  <div class="modal modal-thx">
+    <div class="modal__close"></div>
+    <div class="modal-thx__box">
+      @include('icon::modal-thx', ['class' => 'icon'])
+      <div class="modal-thx__title">Спасибо за вашу заявку</div>
+      <div class="modal-thx__phone">Ваш номер телефона: <span class="phone"></span></div>
+      <div class="modal-thx__desc">Наш специалист свяжется с Вами <span style="white-space: nowrap">в самое ближайшее время</span></div>
     </div>
   </div>
 </div>
