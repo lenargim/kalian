@@ -5,7 +5,7 @@
       @php
         global $post;
         $args = [
-          'numberposts' => -1,
+          'numberposts' => 9,
           'post_type' => 'sale',
         ];
         $actions = get_posts( $args );

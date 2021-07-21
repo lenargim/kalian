@@ -1,4 +1,5 @@
 <div class="covid-block">
+  <img src="@asset('images/covid-bg.webp')" alt="covid" class="covid-block__img">
   <div class="container">
     <h2 class="covid-block__title">COVID-19 МЕРЫ ПРЕДОСТОРОЖНОСТИ</h2>
     <div class="covid-block__text">Внезапно, элементы политического процесса формируют глобальную экономическую сеть и

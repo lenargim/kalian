@@ -3,7 +3,7 @@ jQuery(function($){
   let box = button.parents('.actions-page__wrap');
   button.click( function( event ) {
   event.preventDefault();
-  const ajax_url = window.my_ajax_object.ajax_url || false;
+  const ajax_url = window.ajaxVar.ajaxurl || false;
     $.ajax({
       type : 'POST',
       url : ajax_url, // получаем из wp_localize_script()
@@ -24,7 +24,7 @@ jQuery(function($){
   let reviewBox = $('.reviews-block__item:last-of-type');
   reviewBtn.click( function( event ) {
     event.preventDefault();
-    const ajax_url = window.my_ajax_object.ajax_url || false;
+    const ajax_url = window.ajaxVar.ajaxurl || false;
     $.ajax({
       type : 'POST',
       url : ajax_url, // получаем из wp_localize_script()
