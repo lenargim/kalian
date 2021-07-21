@@ -12,7 +12,11 @@
       @endphp
       @foreach( $goods as $post )
         @php setup_postdata($post) @endphp
-        <div class="price-block__item" data-id="@php the_ID() @endphp">
+        @php $terms = get_the_terms( $post->ID, 'good_type' ) @endphp
+        @if( $terms )
+          @php $term = array_shift( $terms ) @endphp
+        @endif
+        <div class="price-block__item good-@php echo $term->slug @endphp" data-id="@php the_ID() @endphp">
           <div class="price-block__img img"><img src="@php the_post_thumbnail_url() @endphp"
                                                  alt="@php the_title() @endphp"></div>
           <div class="price-block__box">
@@ -40,7 +44,7 @@
               <div class="price-block__price">
                 <span class="price-block__price-actual"><span class="calc-price">@php the_field('price') @endphp</span> ₽</span>
                 @if( get_field('old_price') )
-                <span class="price-block__price-old">@php the_field('old_price') @endphp ₽</span>
+                  <span class="price-block__price-old">@php the_field('old_price') @endphp ₽</span>
                 @endif
               </div>
               <div class="price-block__order button">Заказать</div>
@@ -56,12 +60,14 @@
                 <input type="number" value="1" min="1" step="1" class="input-shisha input-keyup">
                 <button class="btn btn-plus change-price change-shisha">+</button>
               </div>
-              <div class="price-block__qty">
-                <label>Количество чаш</label>
-                <button class="btn btn-minus change-price change-coal change-cups">-</button>
-                <input class="input-cups input-keyup" type="number" value="1" min="1" step="1">
-                <button class="btn btn-plus change-price change-coal change-cups">+</button>
-              </div>
+              @if( $term->slug == 'main')
+                <div class="price-block__qty">
+                  <label>Количество чаш</label>
+                  <button class="btn btn-minus change-price change-coal change-cups">-</button>
+                  <input class="input-cups input-keyup" type="number" value="1" min="1" step="1">
+                  <button class="btn btn-plus change-price change-coal change-cups">+</button>
+                </div>
+              @endif
             </div>
             <div class="price-block__delivery">
               <input id="delivery@php the_ID() @endphp" type="checkbox" class="change-price input-delivery">
@@ -69,7 +75,9 @@
             </div>
             <input type="text" class="price-block__form-item input name" placeholder="Имя">
             <input type="tel" class="tel price-block__form-item input" placeholder="Номер телефона">
-            <div class="price-block__coal-amount">Кол-во углей: <span class="coal"></span></div>
+            @if( $term->slug == 'main')
+              <div class="price-block__coal-amount">Кол-во углей: <span class="coal"></span></div>
+            @endif
             <div class="price-block__total">Итого: <span class="total"></span></div>
             <input disabled type="submit" value="Оформить заказ" class="price-block__submit button">
           </form>

@@ -173,6 +173,24 @@ function my_sale()
         'query_var' => true,
         //'rewrite'       => array( 'slug' => 'the_writer' ), // свой слаг в URL
     ));
+
+    register_taxonomy('good_type', 'goods', array(
+        'hierarchical' => true,
+        'labels' => array(
+            'name' => _x('Тип', 'taxonomy general name'),
+            'singular_name' => _x('тип товара', 'taxonomy singular name'),
+            'all_items' => __('Все типы'),
+            'parent_item' => null,
+            'parent_item_colon' => null,
+            'edit_item' => __('Изменть тип'),
+            'update_item' => __('Обновить'),
+            'add_new_item' => __('Добавить тип'),
+            'menu_name' => __('Тип'),
+        ),
+        'show_ui' => true,
+        'query_var' => true,
+        //'rewrite'       => array( 'slug' => 'the_writer' ), // свой слаг в URL
+    ));
 }
 
 
@@ -240,7 +258,7 @@ function wpcf7_send_mail_telegram($cf7)
             $arr = [
                 'Город:' => 'Самара',
                 'Тема:' => 'Заказ',
-                'Кальян:' => $shisha . ' ' . $shisha_qty,
+                'Кальян:' => $shisha . '. Количество: ' . $shisha_qty,
                 'Чаши:' => $cups_qty,
                 'Уголь:' => $coal,
                 'Время:' => $time,

@@ -21,18 +21,31 @@ $('.price-block__order').on('click', function(){
 
 $('.cup-qty').each(function() {
   let qty = +parseInt($(this).text(), 10);
+  if (qty == 0) {
+  $('.cup-qty').css('visibility', 'hidden')
+  }
   let parent = $(this).parents('.price-block__item');
   parent.find('.input-cups').val(qty);
   parent.find('.input-cups').attr('coef', qty)
-  changeCoalQty(parent, qty);
+
+  if ( parent.hasClass('good-rent') ) {
+    changeTotalRent(parent)
+  } else {
+    changeCoalQty(parent, qty);
+  }
 })
 
 /*  Калькулятор */
 
 $('.change-price').on('input keyup change', function(){
   let parent = $(this).parents('.price-block__item');
-  changeTotal(parent)
+  if ( parent.hasClass('good-rent') ) {
+    changeTotalRent(parent)
+  } else {
+    changeTotal(parent)
+  }
 })
+
 
 $('.input-keyup').on('input keyup', function(){
   let qty = $(this).val()
@@ -57,7 +70,11 @@ $('.change-shisha').on('click', function(e){
     } else if (qty > 1) {
       input.val( --qty )
     }
-    changeCupsQty(parent, qty);
+  if ( parent.hasClass('good-rent') ) {
+      changeTotalRent(parent)
+    } else {
+      changeCupsQty(parent, qty);
+    }
 })
 
 $('.change-cups').on('click', function(e){
@@ -87,6 +104,9 @@ function changeCupsQty(parent, qty) {
 function changeCoalQty(parent, qty) {
   qty = +qty;
   switch (qty) {
+    case 0:
+      parent.find('.coal').text('Нет');
+      break;
     case 1:
       parent.find('.coal').text('4 шт');
       break;
@@ -126,9 +146,23 @@ function changeTotal(parent) {
   }
   let totalSum = shishaSum+cupsSum+deliverySum;
   total.html(`Итого: <span class="total">${totalSum}₽</span>`)
- if (!totalSum || totalSum == 'NaN₽' ) {
-    total.html('<span class="total">Уточните заполнив форму</span>')
-  }
+   if (!totalSum || totalSum == 'NaN₽' ) {
+      total.html('<span class="total">Уточните заполнив форму</span>')
+   }
+}
+
+function changeTotalRent(parent) {
+  let shisha = parent.find('.input-shisha').val();
+  let delivery = parent.find('.input-delivery').prop('checked');
+  let deliverySum = delivery == true ? 500 : 0;
+  let price = parent.find('.calc-price').html();
+  let total = parent.find('.price-block__total');
+  let totalSum = shisha * price + deliverySum;
+  total.html(`Итого: <span class="total">${totalSum}₽</span>`)
+   if (!totalSum || totalSum == 'NaN₽' ) {
+      total.html('<span class="total">Уточните заполнив форму</span>')
+   }
+
 }
 /*  Конец Калькулятор */
 
@@ -174,8 +208,13 @@ $('.price-block__form').on('submit', function(e){
   form.find('.modal-order__form-input, .modal-order__form-title').attr('readonly', false);
   form.find('.modal-order__form-title').val( item.find('.price-block__name').text() )
   form.find('.shisha').val( item.find('.input-shisha').val() + ' шт' )
-  form.find('.cups').val( item.find('.input-cups').val() + ' шт' )
-  form.find('.coal').val( item.find('.price-block__coal-amount .coal').text() )
+  if ( item.hasClass('good-main') ) {
+    form.find('.cups').val( item.find('.input-cups').val() + ' шт' )
+    form.find('.coal').val( item.find('.price-block__coal-amount .coal').text() )
+  } else {
+    form.find('.cups').val( 'Нет' )
+    form.find('.coal').val( 'Нет' )
+  }
   form.find('.time').val( item.find('.time').text() )
   form.find('.tabak').val( item.find('.tobacco').text() )
   let delivery = item.find('.input-delivery').prop('checked');
@@ -211,7 +250,7 @@ $('.menu-shop a').prepend(sushiSvg)
 
 $('.modal-callback__submit').prop('disabled', true)
 
-$('.call__callback').on('click', function(){
+$('.open-callback').on('click', function(){
   $('.modal-callback').addClass('active');
     $('.overlay').addClass('active');
 })
