@@ -1,6 +1,5 @@
 export default {
   init() {
-    // JavaScript to be fired on all pages
   },
   finalize() {
     $('.tel').mask('+7(Z00) 000-00-00', { translation: { 'Z': { pattern: /[0-79]/ } } })

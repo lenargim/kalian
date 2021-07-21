@@ -23,9 +23,10 @@ jQuery(function($){
   let reviewBox = $('.reviews-block__item:last-of-type');
   reviewBtn.click( function( event ) {
     event.preventDefault();
+    const ajax_url = window.my_ajax_object.ajax_url || false;
     $.ajax({
       type : 'POST',
-      url : 'http://localhost:3000/wp/wp-admin/admin-ajax.php', // получаем из wp_localize_script()
+      url : ajax_url, // получаем из wp_localize_script()
       data : {
         action : 'loadmore_review', // экшен для wp_ajax_ и wp_ajax_nopriv_
       },
