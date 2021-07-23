@@ -17,6 +17,7 @@
     </div>
   </div>
   <div class="steps">
+    <img src="@asset('images/steps-bg.webp')" alt="steps" class="steps__img">
     <div class="container">
       <h2 class="title delivery__steps-title">Доставка</h2>
       <div class="delivery__steps-desc">Доставка зависит от района и удаленности, зоны доставки можно посмотреть на карте доставки</div>

@@ -1,5 +1,5 @@
 // import external dependencies
-import 'jquery';
+//import 'jquery';
 import 'slick-carousel/slick/slick.min';
 import 'jquery-mask-plugin/dist/jquery.mask.min'
 
