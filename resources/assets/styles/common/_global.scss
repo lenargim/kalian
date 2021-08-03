@@ -281,3 +281,37 @@ h2.title {
     }
   }
 }
+
+.to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 87px;
+  height: 87px;
+  position: fixed;
+  right: 7vw;
+  bottom: 10vw;
+  border-radius: 50%;
+  background-color: $main;
+  color: #fff;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  font-family: $muller;
+  font-weight: 700;
+  font-size: 16px;
+
+  &__arrow {
+    width: 8px;
+    height: 13px;
+    margin-bottom: 9px;
+  }
+
+  &.active {
+    z-index: 9;
+    opacity: 1;
+  }
+}

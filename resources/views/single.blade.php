@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-  @include('partials.breadcrumbs')
+  <div class="breadcrumbs">
+    <div class="container">
+      <a href="/">Главная</a>
+      <a href="/sale">Акции</a>
+    </div>
+  </div>
   <div class="action-detailed">
     <div class="container">
       <div class="action-detailed__wrap">

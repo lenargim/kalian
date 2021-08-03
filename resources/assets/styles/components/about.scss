@@ -87,7 +87,8 @@
     }
   }
 
-  &__tools {
+  &__tools,
+  &__team {
     .title {
       text-align: left;
     }
@@ -95,6 +96,18 @@
 
   &__slider {
     margin: 0 -15px;
+
+    .slick-list {
+      overflow: unset;
+    }
+
+    .slick-next {
+      right: -60px;
+    }
+
+    .slick-prev {
+      left: -60px;
+    }
 
     &-wrap {
       border-top: 1px solid rgba(0, 0, 0, 0.3);
@@ -133,46 +146,127 @@
       font-weight: 400;
       font-size: 18px;
     }
+  }
 
-    .slick-list {
-      overflow: unset;
-    }
-
-    .slick-arrow {
-      z-index: 1;
-
+  &__team {
+    &-slider {
       @media screen and (min-width: 1920px) {
-        width: 38px;
-        height: 38px;
+        margin: 0 -30px;
       }
 
       @media screen and (min-width: 1280px) and (max-width: 1919px) {
-        width: 30px;
-        height: 30px;
+        margin: 0 -15px;
       }
 
-      &::before {
-        font-size: 0;
-        border: solid $black;
-        border-width: 0 3px 3px 0;
-        display: inline-block;
-        padding: 12px;
-        opacity: 1;
+      .slick-next {
+        right: -45px;
+
+        @media screen and (min-width: 1280px) and (max-width: 1919px) {
+          right: -30px;
+        }
       }
 
-      &.slick-next {
-        right: -60px;
-        transform: rotate(-45deg);
+      .slick-prev {
+        left: -45px;
+
+        @media screen and (min-width: 1280px) and (max-width: 1919px) {
+          left: -30px;
+        }
       }
 
-      &.slick-prev {
-        left: -60px;
-        transform: rotate(135deg);
+      &-wrap {
+        border-top: 1px solid rgba(0, 0, 0, 0.3);
+        padding: 109px 0 120px;
       }
     }
 
-    .slick-arrow.slick-disabled {
-      opacity: 0.5;
+    &-item {
+      margin: 0 30px;
+      overflow: hidden;
+      border-radius: 15px;
+      position: relative;
+      cursor: pointer;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 21.35%, #000 100%);
+
+      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        margin: 0 15px;
+      }
     }
+
+    .about-page__team-item {
+      @media screen and (min-width: 1920px) {
+        height: 631px;
+      }
+
+      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        height: 500px;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      z-index: -1;
+    }
+
+    &-text {
+      position: absolute;
+      font-weight: 600;
+      font-size: 28px;
+      letter-spacing: 0.02em;
+      color: #fff;
+      bottom: 32px;
+      width: 100%;
+      text-align: center;
+
+      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .slick-arrow {
+    z-index: 1;
+
+    @media screen and (min-width: 1920px) {
+      width: 38px;
+      height: 38px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      width: 30px;
+      height: 30px;
+    }
+
+    &::before {
+      font-size: 0;
+      border: solid $black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 12px;
+      opacity: 1;
+    }
+
+    &.slick-next {
+      transform: rotate(-45deg);
+
+      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        right: -15px;
+      }
+    }
+
+    &.slick-prev {
+      transform: rotate(135deg);
+
+      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        left: -15px;
+      }
+    }
+  }
+
+  .slick-arrow.slick-disabled {
+    opacity: 0.5;
   }
 }

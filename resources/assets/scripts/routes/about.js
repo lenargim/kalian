@@ -13,3 +13,13 @@ equipmentSlider.slick({
   infinite: false,
   variableWidth: true,
 });
+
+
+let team = $('.about-page__team-slider');
+
+team.slick({
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  arrows: true,
+  infinite: false,
+});

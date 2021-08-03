@@ -34,7 +34,7 @@
 <div class="overlay">
   <div class="modal modal-img">
     <div class="modal__close"></div>
-    <div class="modal-img__box"></div>
+    <div class="modal-img__box img"></div>
   </div>
   <div class="modal modal-order">
     <div class="modal__close"></div>
@@ -61,4 +61,8 @@
       <div class="modal-thx__desc">Наш специалист свяжется с Вами <span style="white-space: nowrap">в самое ближайшее время</span></div>
     </div>
   </div>
+</div>
+<div class="to-top">
+  @include('icon::to-top-arrow', ['class' => 'to-top__arrow'])
+  <span>Наверх</span>
 </div>

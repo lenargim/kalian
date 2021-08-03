@@ -165,18 +165,29 @@ function changeTotalRent(parent) {
 }
 /*  Конец Калькулятор */
 
-$('.reviews-block__item-box').on('click', '.open-modal' , function() {
+$('.reviews-block__item-box, .about-page__team-slider').on('click', '.open-modal' , function() {
   let content = $(this).html();
   $('.modal-img__box').html(content);
   $('.modal-img').addClass('active');
   $('.overlay').addClass('active');
 })
 
-$('.modal__close').on('click', function() {
-  $('.overlay').removeClass('active')
-  $('.modal').removeClass('active')
-  $('.modal-img__box').html('');
-})
+$('.modal__close').on('click', closeModal );
+
+$('.overlay').mouseup(function (e) { // событие клика по веб-документу
+  let modal = $('.modal.active'); // тут указываем элемент
+  if (!modal.is(e.target) // если клик был не по нашему блоку
+    && modal.has(e.target).length === 0) { // и не по его дочерним элементам
+    closeModal()
+  }
+});
+
+
+function closeModal() {
+   $('.overlay').removeClass('active')
+    $('.modal').removeClass('active')
+    $('.modal-img__box').html('');
+}
 
 $('.price-block__form-item, .modal-callback__input').on('input', function(){
   if ( $(this).hasClass('name') )  {
@@ -253,3 +264,24 @@ $('.open-callback').on('click', function(){
   $('.modal-callback').addClass('active');
     $('.overlay').addClass('active');
 })
+
+$('.to-top').on('click', function () {
+  $('body,html').animate({
+    scrollTop: 0,
+  }, 700);
+  $('.to-top').removeClass('active')
+  return false;
+});
+
+$(window).scroll(function() {
+  let scrollHeight = $(window).scrollTop();
+  let windowHeight = $(window).height();
+  scrollHeight > windowHeight ? $('.to-top').addClass('active') : $('.to-top').removeClass('active')
+
+   // sticky menu
+    if( scrollHeight > windowHeight/2 ) {
+    return
+    } else {
+    return
+    }
+});

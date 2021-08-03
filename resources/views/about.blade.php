@@ -61,5 +61,25 @@
         </div>
       </div>
     </div>
+    <div class="about-page__team">
+      <div class="container">
+        <h2 class="title">Фото и видео нашей команды</h2>
+      </div>
+      <div class="about-page__team-slider-wrap">
+        <div class="container">
+          <div class="about-page__team-slider">
+            @while(have_rows('team')) @php the_row() @endphp
+            <div class="open-modal">
+              <div class="about-page__team-item">
+                <img src="@php the_sub_field('img') @endphp" alt="@php the_sub_field('name') @endphp">
+                <div class="about-page__team-text">@php the_sub_field('name') @endphp</div>
+              </div>
+            </div>
+            @endwhile
+            @php wp_reset_postdata() @endphp
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 @endsection
