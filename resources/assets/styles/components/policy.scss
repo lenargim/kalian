@@ -1,12 +1,20 @@
 .policy-page {
   padding-bottom: 120px;
 
+  @media screen and (max-width: 1279px) {
+    padding-bottom: 24px;
+  }
+
   @media screen and (min-width: 1920px) {
     font-size: 18px;
   }
 
   @media screen and (min-width: 1280px) and (max-width: 1919px) {
     font-size: 16px;
+  }
+
+  @media screen and (max-width: 1279px) {
+    font-size: 10px;
   }
 
   p {

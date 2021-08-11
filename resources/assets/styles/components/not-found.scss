@@ -1,6 +1,10 @@
 .not-found {
   padding: 136px 0;
 
+  @media screen and (max-width: 1279px) {
+    padding: 38px 0 32px;
+  }
+
   &__wrap {
     display: flex;
     align-items: flex-start;
@@ -13,6 +17,12 @@
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       gap: 40px;
     }
+
+    @media screen and (max-width: 1279px) {
+      gap: 24px;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   .icon {
@@ -24,6 +34,11 @@
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       min-width: 200px;
       height: 200px;
+    }
+
+    @media screen and (max-width: 1279px) {
+      width: 129px;
+      height: 129px;
     }
   }
 
@@ -44,6 +59,12 @@
       font-size: 46px;
       padding-bottom: 16px;
     }
+
+    @media screen and (max-width: 1279px) {
+      font-size: 30px;
+      padding-bottom: 16px;
+      text-align: center;
+    }
   }
 
   &__desc {
@@ -55,6 +76,12 @@
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       font-size: 24px;
       padding-bottom: 50px;
+    }
+
+    @media screen and (max-width: 1279px) {
+      font-size: 16px;
+      padding-bottom: 32px;
+      text-align: center;
     }
   }
 
@@ -70,6 +97,11 @@
 
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       grid-gap: 24px 48px;
+    }
+
+    @media screen and (max-width: 1279px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1em 10%;
     }
 
     &-wrap {
@@ -91,6 +123,10 @@
 
       @media screen and (min-width: 1280px) and (max-width: 1919px) {
         font-size: 24px;
+      }
+
+      @media screen and (max-width: 1279px) {
+        font-size: 16px;
       }
     }
 

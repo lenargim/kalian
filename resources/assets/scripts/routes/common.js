@@ -29,8 +29,10 @@ $('.cup-qty').each(function() {
 
   if ( parent.hasClass('good-rent') ) {
     changeTotalRent(parent)
-  } else {
+  } else if ( parent.hasClass('good-main') ) {
     changeCoalQty(parent, qty);
+  } else if ( parent.hasClass('good-fruit') ) {
+    changeCoalFruit(parent, qty);
   }
 })
 
@@ -40,8 +42,11 @@ $('.change-price').on('input keyup change', function(){
   let parent = $(this).parents('.price-block__item');
   if ( parent.hasClass('good-rent') ) {
     changeTotalRent(parent)
-  } else {
+  } else if ( parent.hasClass('good-main') ) {
     changeTotal(parent)
+  } else if ( parent.hasClass('good-fruit') ) {
+    let qty = parent.find('.input-shisha').val();
+    changeCoalFruit(parent, qty);
   }
 })
 
@@ -53,9 +58,11 @@ $('.input-keyup').on('input keyup', function(){
     $(this).val(1)
   }
   if ( $(this).hasClass('input-shisha')  ) {
-    changeCupsQty(parent, qty)
+  parent.hasClass('good-fruit') ? changeCoalFruit(parent, qty) : changeCupsQty(parent, qty)
   } else if ( $(this).hasClass('input-cups') ) {
     changeCoalQty(parent, qty)
+  } else {
+     changeCoalFruit(parent, qty);
   }
 })
 
@@ -71,8 +78,10 @@ $('.change-shisha').on('click', function(e){
     }
   if ( parent.hasClass('good-rent') ) {
       changeTotalRent(parent)
-    } else {
+    } else if ( parent.hasClass('good-main') ) {
       changeCupsQty(parent, qty);
+    } else {
+       changeCoalFruit(parent, qty);
     }
 })
 
@@ -116,6 +125,12 @@ function changeCoalQty(parent, qty) {
         parent.find('.coal').text(`${qty*4 + 4 + (qty-2)*2} шт`);
     }
     changeTotal(parent)
+}
+
+function changeCoalFruit(parent, qty) {
+    qty = +qty;
+    parent.find('.coal').text(`${qty}0 шт`);
+    changeTotalFruit(parent)
 }
 
 function changeTotal(parent) {
@@ -163,6 +178,31 @@ function changeTotalRent(parent) {
    }
 
 }
+
+function changeTotalFruit(parent) {
+  let shisha = parent.find('.input-shisha').val();
+  let delivery = parent.find('.input-delivery').prop('checked');
+  let deliverySum = delivery == true ? 500 : 0;
+  let price = parent.find('.calc-price').html();
+  let total = parent.find('.price-block__total');
+  let  shishaSum = undefined;
+
+  if (shisha == 1) {
+    shishaSum = +price;
+  } else if (shisha == 2) {
+    shishaSum = +price*(1 + 0.5);
+  } else if ( shisha == 3 ) {
+    shishaSum = +price*(1 + 0.5 + 0.5);
+  }
+  let totalSum = shishaSum + deliverySum;
+  total.html(`Итого: <span class="total">${totalSum}₽</span>`);
+  if (!totalSum || totalSum == 'NaN₽' ) {
+    total.html('<span class="total">Уточните заполнив форму</span>')
+  }
+}
+
+
+
 /*  Конец Калькулятор */
 
 $('.reviews-block__item-box, .about-page__team-slider').on('click', '.open-modal' , function() {
@@ -220,9 +260,14 @@ $('.price-block__form').on('submit', function(e){
   form.find('.shisha').val( item.find('.input-shisha').val() + ' шт' )
   if ( item.hasClass('good-main') ) {
     form.find('.cups').val( item.find('.input-cups').val() + ' шт' )
-    form.find('.coal').val( item.find('.price-block__coal-amount .coal').text() )
+  } else if ( item.hasClass('good-fruit') ) {
+    form.find('.cups').val( item.find('.input-shisha').val() + ' шт' )
   } else {
     form.find('.cups').val( 'Нет' )
+  }
+  if ( item.hasClass('good-main') || item.hasClass('good-fruit') ) {
+    form.find('.coal').val( item.find('.price-block__coal-amount .coal').text() )
+  } else {
     form.find('.coal').val( 'Нет' )
   }
   form.find('.time').val( item.find('.time').text() )
@@ -285,3 +330,13 @@ $(window).scroll(function() {
     return
     }
 });
+
+$('.burger').on('click', function(){
+  $(this).toggleClass('active')
+})
+
+$('.price-block__more').on('click', function(){
+  let info = $(this).parents('.price-block__info');
+  info.toggleClass('active');
+  info.hasClass('active') ? $(this).siblings('.price-block__mobile').slideDown() : $(this).siblings('.price-block__mobile').slideUp()
+})

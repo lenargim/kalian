@@ -5,6 +5,10 @@
   overflow: hidden;
   z-index: 0;
 
+  @media screen and (max-width: 1279px) {
+    padding: 9px 0 24px;
+  }
+
   &__img {
     position: absolute;
     left: 0;
@@ -31,6 +35,11 @@
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       font-size: 18px;
     }
+
+    @media screen and (max-width: 1279px) {
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
   }
 
   &__wrap {
@@ -43,6 +52,11 @@
 
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       grid-gap: 16px;
+    }
+
+    @media screen and (max-width: 1279px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px 24px;
     }
   }
 
@@ -63,6 +77,12 @@
       width: 50px;
       height: 50px;
     }
+
+    @media screen and (max-width: 1279px) {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 16px;
+    }
   }
 
   &__number {
@@ -78,6 +98,11 @@
       font-size: 26px;
       padding-bottom: 10px;
     }
+
+    @media screen and (max-width: 1279px) {
+      font-size: 14px;
+      padding-bottom: 4px;
+    }
   }
 
   &__text {
@@ -88,12 +113,18 @@
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       font-size: 16px;
     }
+
+    @media screen and (max-width: 1279px) {
+      font-size: 10px;
+    }
   }
 
   &__box {
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 60px 0;
+    @media screen and (min-width: 1280px) {
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 60px 0;
+    }
   }
 
   &__link {
@@ -105,6 +136,11 @@
       background-color: transparent;
       color: $main;
       border: 1px solid $main;
+
+      @media screen and (max-width: 1279px) {
+        padding: 8px 14px;
+        font-size: 14px;
+      }
     }
   }
 }

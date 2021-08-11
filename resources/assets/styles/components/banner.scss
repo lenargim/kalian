@@ -13,6 +13,10 @@
       top: calc(50vh - 4em);
       left: 0;
     }
+
+    @media screen and (max-width: 1279px) {
+      padding: 24px 0 12px;
+    }
   }
 
   &__item {
@@ -27,6 +31,10 @@
 
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       height: 100vh;
+    }
+
+    @media screen and (max-width: 1279px) {
+      height: calc(100vh - 100px);
     }
 
     &-wrap {
@@ -47,6 +55,11 @@
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       width: 40%;
       font-size: 40px;
+    }
+
+    @media screen and (max-width: 1279px) {
+      font-size: 28px;
+      text-align: center;
     }
   }
 
@@ -71,6 +84,13 @@
       margin-top: 30px;
       padding: 15px 50px;
     }
+
+    @media screen and (max-width: 1279px) {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 8px 43px;
+    }
   }
 
   &__info {
@@ -92,6 +112,13 @@
       bottom: 30%;
       right: 10%;
     }
+
+    @media screen and (max-width: 1279px) {
+      position: relative;
+      padding: 16px 24px;
+      max-width: 100%;
+      margin-bottom: 16px;
+    }
   }
 
   &__price {
@@ -107,6 +134,11 @@
       padding-bottom: 15px;
     }
 
+    @media screen and (max-width: 1279px) {
+      font-size: 18px;
+      padding-bottom: 8px;
+    }
+
     span {
       @media screen and (min-width: 1920px) {
         font-size: 48px;
@@ -114,6 +146,10 @@
 
       @media screen and (min-width: 1280px) and (max-width: 1919px) {
         font-size: 30px;
+      }
+
+      @media screen and (max-width: 1279px) {
+        font-size: 24px;
       }
     }
   }
@@ -130,6 +166,11 @@
       font-size: 20px;
     }
 
+    @media screen and (max-width: 1279px) {
+      padding-top: 4px;
+      font-size: 12px;
+    }
+
     p {
       color: rgba(255, 255, 255, 0.5);
       font-size: 18px;
@@ -137,8 +178,10 @@
       padding-bottom: 1em;
     }
 
-    span {
-      white-space: nowrap;
+    @media screen and (min-width: 1024px) {
+      span {
+        white-space: nowrap;
+      }
     }
   }
 
@@ -169,28 +212,51 @@
       border-radius: 40px;
     }
 
-    .arrow {
-      border: solid #fff;
-      border-width: 0 2px 2px 0;
-      display: inline-block;
-      padding: 5px;
-      cursor: pointer;
+    @media screen and (max-width: 1279px) {
+      width: 85px;
+      height: 25px;
+      padding: 7px 13px;
+      border-radius: 55px;
+      bottom: 24px;
+    }
 
-      &.right {
-        transform: rotate(-45deg);
-        -webkit-transform: rotate(-45deg);
+    .slick-arrow {
+      &.slick-prev {
+        left: 7px;
+        transform: translate(0, -50%) rotate(135deg);
       }
 
-      &.left {
-        transform: rotate(135deg);
-        -webkit-transform: rotate(135deg);
+      &.slick-next {
+        right: 7px;
+        transform: translate(0, -50%) rotate(-45deg);
       }
+
+      &::before {
+        border-color: #fff;
+
+        @media screen and (min-width: 1280px) {
+          padding: 5px;
+          border-width: 0 2px 2px 0;
+        }
+
+        @media screen and (max-width: 1279px) {
+          padding: 3px;
+          border-width: 0 1px 1px 0;
+        }
+      }
+    }
+  }
+
+  &__slider-wrap {
+    @media screen and (max-width: 1279px) {
+      position: relative;
     }
   }
 
   &__slider-counter {
     color: $main2;
     width: 3em;
+    line-height: 7px;
     text-align: center;
     display: inline-block;
     margin: 0 18px;
@@ -202,6 +268,11 @@
 
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       font-size: 16px;
+    }
+
+    @media screen and (max-width: 1279px) {
+      font-size: 12px;
+      margin: 0 10px;
     }
 
     &::before,
@@ -233,6 +304,12 @@
       justify-content: space-between;
       gap: 10px;
       padding: 35px 0 23px;
+
+      @media screen and (max-width: 1279px) {
+        flex-wrap: wrap;
+        grid-gap: 32px 10px;
+        padding: 24px 0;
+      }
     }
 
     &-item {
@@ -241,6 +318,10 @@
       justify-content: flex-start;
       align-items: center;
       color: #fff;
+
+      @media screen and (max-width: 1279px) {
+        width: calc(50% - 5px);
+      }
 
       .hookah {
         @media screen and (min-width: 1920px) {
@@ -251,6 +332,12 @@
           margin-bottom: 15px;
           width: 50px;
           height: 50px;
+        }
+
+        @media screen and (max-width: 1279px) {
+          width: 32px;
+          height: 32px;
+          margin-bottom: 12px;
         }
       }
     }

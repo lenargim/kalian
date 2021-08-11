@@ -8,7 +8,9 @@
           <div class="container">
             <div class="banner__wrap">
               <div class="banner__title">@php the_sub_field('title') @endphp</div>
-              <div class="banner__link button open-callback">Заказать</div>
+              @if(!wp_is_mobile())
+                <div class="banner__link button open-callback">Заказать</div>
+              @endif
             </div>
             <div class="banner__info">
               <div class="banner__price">от <span>@php the_sub_field('price') @endphp</span> ₽</div>
@@ -17,6 +19,9 @@
                 @php the_sub_field('tabaki') @endphp
               </div>
             </div>
+            @if(wp_is_mobile())
+              <div class="banner__link button open-callback">Заказать</div>
+            @endif
           </div>
         </div>
       </div>

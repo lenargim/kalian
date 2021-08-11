@@ -1,6 +1,11 @@
 <header class="header">
   <div class="container">
     <div class="header__wrap">
+      @if(wp_is_mobile())
+        <div class="burger">
+          <span></span>
+        </div>
+      @endif
       <a class="logo img" href="/"><img src="@asset('images/logo.png')" alt="kalian-smr"></a>
       <div class="socials">
         <a class="socials-link" href="https://www.instagram.com/@php the_field('instagram',9) @endphp"
@@ -18,10 +23,6 @@
       @if (has_nav_menu('primary_navigation'))
         {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'header__menu']) !!}
       @endif
-      <a class="header__sushi" href="https://xopoce.ru/">
-        @include('icon::xopoce', ['class' => 'xopoce'])
-        <span>Суши-shop</span>
-      </a>
       <div class="call">
         <a href="tel:@php the_field('phone',9) @endphp" class="call__phone">
           @include('icon::help-operator', ['class' => 'help'])

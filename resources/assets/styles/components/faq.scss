@@ -2,10 +2,19 @@
   padding: 60px 0 125px;
   color: $black;
 
+  @media screen and (max-width: 1279px) {
+    padding: 0 0 32px;
+  }
+
   &__wrap {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+
+    @media screen and (max-width: 1279px) {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
   }
 
   &__questions {
@@ -19,6 +28,12 @@
 
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       grid-gap: 16px;
+    }
+
+    @media screen and (max-width: 1279px) {
+      grid-template-columns: 1fr;
+      grid-gap: 8px;
+      width: 100%;
     }
 
     &-item {
@@ -43,6 +58,11 @@
         padding: 16px 0;
       }
 
+      @media screen and (max-width: 1279px) {
+        padding: 13px;
+        font-size: 14px;
+      }
+
       &:hover,
       &.active {
         background-color: $black;
@@ -55,6 +75,10 @@
     width: 47%;
     min-height: 100%;
 
+    @media screen and (max-width: 1279px) {
+      display: none;
+    }
+
     &-item {
       border: 1px solid $main;
       border-radius: 15px;
@@ -64,6 +88,16 @@
       font-size: 14px;
       line-height: 138%;
       letter-spacing: 0.01em;
+
+      @media screen and (max-width: 1279px) {
+        width: 100%;
+        padding: 16px 10px;
+        font-size: 12px;
+
+        img {
+          width: 100%;
+        }
+      }
 
       a {
         color: $main;
@@ -110,10 +144,18 @@
       @media screen and (min-width: 1280px) and (max-width: 1919px) {
         font-size: 28px;
       }
+
+      @media screen and (max-width: 1279px) {
+        font-size: 18px;
+      }
     }
   }
 }
 
 .faq-page {
   padding-bottom: 120px;
+
+  @media screen and (max-width: 1279px) {
+    padding-bottom: 24px;
+  }
 }

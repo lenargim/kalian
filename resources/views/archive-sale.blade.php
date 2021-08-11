@@ -10,16 +10,15 @@
           query_posts( $query_string .'&posts_per_page=9' );
         @endphp
         @while( have_posts() ) @php the_post() @endphp
-        <div class="actions-page__item">
+        <a href="@php echo get_post_permalink() @endphp" class="actions-page__item">
           <div class="actions-slider__img"><img src="@php the_post_thumbnail_url() @endphp"
                                                 alt="@php the_title() @endphp"></div>
           <div class="actions-slider__info">
             <div class="actions-slider__name">@php the_title() @endphp</div>
             <div class="actions-slider__text">@php the_field('short') @endphp
             </div>
-            <a href="@php echo get_post_permalink() @endphp" class="actions-slider__link">Подробнее</a>
           </div>
-        </div>
+        </a>
         @endwhile
         @php wp_reset_query() @endphp
         @php

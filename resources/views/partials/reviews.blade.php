@@ -2,7 +2,7 @@
   <div class="container">
     <h2 class="title">Отзывы</h2>
     <div class="reviews-block__wrap">
-      <div class="reviews-block__item-box">
+      <div class="reviews-block__item-box reviews-block__item-box_slider">
         @php
         global $post;
         $reviewsArgs = [

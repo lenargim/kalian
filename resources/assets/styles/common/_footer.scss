@@ -15,6 +15,11 @@
       margin-right: 50px;
       width: 82px;
     }
+
+    @media screen and (max-width: 1279px) {
+      width: 70px;
+      margin: 0 auto 24px;
+    }
   }
 
   &__wrap {
@@ -26,6 +31,16 @@
 
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       padding: 30px 0;
+    }
+
+    @media screen and (max-width: 1279px) {
+      flex-direction: column;
+      padding: 16px 0;
+      align-items: center;
+
+      .call {
+        display: none;
+      }
     }
   }
 
@@ -45,6 +60,10 @@
       grid-gap: 20px 40px;
     }
 
+    @media screen and (max-width: 1279px) {
+      display: none;
+    }
+
     .menu-shop a {
       display: flex;
       align-items: center;
@@ -60,7 +79,9 @@
   }
 
   &__side {
-    margin-left: auto;
+    @media screen and (min-width: 1280px) {
+      margin-left: auto;
+    }
   }
 
   .socials {
@@ -73,6 +94,11 @@
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       padding: 20px 0 20px;
     }
+
+    @media screen and (max-width: 1279px) {
+      justify-content: center;
+      margin-bottom: 24px;
+    }
   }
 
   .socials-link {
@@ -84,6 +110,12 @@
       margin-left: 30px;
       width: 25px;
       height: 25px;
+    }
+
+    @media screen and (max-width: 1279px) {
+      margin: 0 12px;
+      width: 28px;
+      height: 28px;
     }
   }
 
@@ -100,6 +132,10 @@
 
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       font-size: 16px;
+    }
+
+    @media screen and (max-width: 1279px) {
+      font-size: 14px;
     }
   }
 }

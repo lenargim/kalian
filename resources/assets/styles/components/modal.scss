@@ -4,7 +4,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 9;
+  z-index: -10;
   background: linear-gradient(161.01deg, #1a215d -3.89%, rgba(12, 15, 51, 0.22) 100.17%);
   display: none;
   overflow-y: auto;
@@ -13,6 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
   }
 }
 
@@ -24,8 +25,13 @@
   overflow: hidden;
   position: relative;
 
+  @media screen and (max-width: 1279px) {
+    border-radius: 5px;
+    width: calc(100vw - 10px);
+  }
+
   &.active {
-    z-index: 1;
+    z-index: 10;
     display: block;
   }
 
@@ -48,6 +54,13 @@
       right: 20px;
     }
 
+    @media screen and (max-width: 1279px) {
+      width: 15px;
+      height: 15px;
+      top: 8px;
+      right: 8px;
+    }
+
     &::before,
     &::after {
       content: "";
@@ -63,6 +76,10 @@
 
       @media screen and (min-width: 1280px) and (max-width: 1919px) {
         width: 33px;
+      }
+
+      @media screen and (max-width: 1279px) {
+        width: 20px;
       }
     }
 
@@ -87,11 +104,24 @@
     &__box > img {
       max-width: 80vw;
       height: 80vh;
+
+      @media screen and (max-width: 1279px) {
+        height: auto;
+        max-height: 90vh;
+        max-width: 90vw;
+      }
     }
 
     .about-page__team-item {
       max-width: 80vw;
+      width: 100%;
       height: 80vh;
+
+      @media screen and (max-width: 1279px) {
+        height: auto;
+        max-height: 90vh;
+        max-width: 90vw;
+      }
     }
   }
 
@@ -108,6 +138,11 @@
       width: 45%;
     }
 
+    @media screen and (max-width: 1279px) {
+      padding: 32px 10px;
+      width: calc(100% - 10px);
+    }
+
     &__title {
       font-weight: 700;
       letter-spacing: 0.02em;
@@ -121,6 +156,11 @@
       @media screen and (min-width: 1280px) and (max-width: 1919px) {
         font-size: 22px;
         padding-bottom: 10px;
+      }
+
+      @media screen and (max-width: 1279px) {
+        font-size: 24px;
+        padding-bottom: 8px;
       }
     }
 
@@ -144,6 +184,11 @@
         font-size: 16px;
       }
 
+      @media screen and (max-width: 1279px) {
+        font-size: 18px;
+        padding-bottom: 16px;
+      }
+
       &::before {
         content: "";
         border-left: 1px solid $main;
@@ -158,6 +203,11 @@
         @media screen and (min-width: 1280px) and (max-width: 1919px) {
           margin-right: 10px;
           padding: 4px;
+        }
+
+        @media screen and (max-width: 1279px) {
+          margin-right: 12px;
+          padding: 6px;
         }
       }
     }
@@ -182,24 +232,35 @@
           font-size: 24px;
           padding: 15px 0;
         }
+
+        @media screen and (max-width: 1279px) {
+          font-size: 24px;
+          padding: 16px 0 8px;
+        }
       }
 
       &-info,
       &-personal {
         display: grid;
-        grid-gap: 0 12px;
 
         @media screen and (min-width: 1920px) {
           grid-template-columns: 325px 266px;
+          grid-gap: 0 12px;
         }
 
-        @media screen and (min-width: 1280px) and (max-width: 1919px) {
-          grid-template-columns: 50% 50%;
+        @media screen and (max-width: 1919px) {
+          grid-template-columns: 47% 50%;
+          grid-gap: 5px 12px;
+          padding: 16px 0;
         }
 
         span {
           color: #4f4f4f;
           letter-spacing: 0.01em;
+
+          @media screen and (max-width: 1279px) {
+            font-size: 12px;
+          }
 
           &.emph {
             white-space: nowrap;
@@ -211,6 +272,10 @@
 
             @media screen and (min-width: 1280px) and (max-width: 1919px) {
               font-size: 22px;
+            }
+
+            @media screen and (max-width: 1279px) {
+              font-size: 12px;
             }
 
             & + .wpcf7-form-control-wrap {
@@ -235,6 +300,7 @@
       }
 
       &-input {
+        width: 100%;
         border: none;
         font-weight: 600;
         color: #4f4f4f;
@@ -248,6 +314,10 @@
           font-size: 18px;
         }
 
+        @media screen and (max-width: 1279px) {
+          font-size: 12px;
+        }
+
         &.tel {
           line-height: 1;
           color: $main;
@@ -259,6 +329,10 @@
 
           @media screen and (min-width: 1280px) and (max-width: 1919px) {
             font-size: 22px;
+          }
+
+          @media screen and (max-width: 1279px) {
+            font-size: 14px;
           }
         }
 
@@ -280,7 +354,7 @@
           margin: 32px 0;
         }
 
-        @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        @media screen and (max-width: 1919px) {
           padding: 16px 0;
           margin: 16px 0;
         }
@@ -301,6 +375,11 @@
             font-size: 16px;
             margin-right: 10px;
           }
+
+          @media screen and (max-width: 1279px) {
+            font-size: 18px;
+            margin-right: 21px;
+          }
         }
       }
 
@@ -318,6 +397,10 @@
         @media screen and (min-width: 1280px) and (max-width: 1919px) {
           font-size: 30px;
         }
+
+        @media screen and (max-width: 1279px) {
+          font-size: 24px;
+        }
       }
     }
 
@@ -333,6 +416,10 @@
         padding-top: 16px;
       }
 
+      @media screen and (max-width: 1279px) {
+        padding-top: 24px;
+      }
+
       .button {
         border-radius: 16px;
 
@@ -342,6 +429,11 @@
 
         @media screen and (min-width: 1280px) and (max-width: 1919px) {
           padding: 16px 50px;
+        }
+
+        @media screen and (max-width: 1279px) {
+          padding: 8px;
+          border-radius: 8px;
         }
       }
     }
@@ -357,12 +449,22 @@
   padding: 50px 40px;
   max-width: 452px;
 
+  @media screen and (max-width: 1279px) {
+    padding: 32px 10px 24px;
+  }
+
   &__title {
     font-weight: 700;
     font-size: 36px;
     text-align: center;
     color: $black;
     padding-bottom: 0.5em;
+
+    @media screen and (max-width: 1279px) {
+      font-size: 24px;
+      padding-bottom: 8px;
+      text-align: center;
+    }
   }
 
   &__desc {
@@ -371,6 +473,11 @@
     text-align: center;
     color: #828282;
     padding-bottom: 40px;
+
+    @media screen and (max-width: 1279px) {
+      padding-bottom: 16px;
+      text-align: center;
+    }
   }
 
   &__input {
@@ -384,6 +491,12 @@
     color: #7d7d7d;
     border-radius: 15px;
     width: 100%;
+
+    @media screen and (max-width: 1279px) {
+      padding: 11px 16px;
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
   }
 
   &__span {
@@ -393,6 +506,12 @@
     text-align: center;
     color: #828282;
     padding-bottom: 24px;
+
+    @media screen and (max-width: 1279px) {
+      font-size: 12px;
+      text-align: center;
+      padding-bottom: 16px;
+    }
   }
 
   &__submit {
@@ -401,6 +520,10 @@
     margin: 0 auto;
     padding: 17px 0;
     width: 100%;
+
+    @media screen and (max-width: 1279px) {
+      padding: 12px 0;
+    }
 
     &:disabled {
       opacity: 0.8;
@@ -419,9 +542,19 @@
   padding: 80px 24px 60px;
   max-width: 452px;
 
+  @media screen and (max-width: 1279px) {
+    padding: 40px 30px 30px;
+  }
+
   .icon {
     display: block;
     margin: 0 auto 40px;
+
+    @media screen and (max-width: 1279px) {
+      width: 68px;
+      height: 68px;
+      margin-bottom: 37px;
+    }
   }
 
   &__title {
@@ -430,6 +563,12 @@
     text-align: center;
     color: $black;
     padding-bottom: 24px;
+
+    @media screen and (max-width: 1279px) {
+      text-align: center;
+      font-size: 24px;
+      padding-bottom: 12px;
+    }
   }
 
   &__desc {
@@ -437,6 +576,11 @@
     font-size: 20px;
     text-align: center;
     color: #828282;
+
+    @media screen and (max-width: 1279px) {
+      font-size: 18px;
+      text-align: center;
+    }
   }
 
   &__phone {
@@ -446,6 +590,15 @@
     text-align: center;
     color: $main;
     padding-bottom: 24px;
+
+    .phone {
+      white-space: nowrap;
+    }
+
+    @media screen and (max-width: 1279px) {
+      font-size: 18px;
+      padding-bottom: 12px;
+      text-align: center;
+    }
   }
 }
-

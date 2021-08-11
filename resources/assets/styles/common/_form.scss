@@ -17,4 +17,10 @@
     padding: 12px 10px;
     margin-bottom: 10px;
   }
+
+  @media screen and (max-width: 1279px) {
+    border-radius: 15px;
+    padding: 10px 16px;
+    margin-bottom: 12px;
+  }
 }

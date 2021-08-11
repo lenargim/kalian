@@ -3,46 +3,35 @@
   margin: 0 -16px;
   overflow: hidden;
 
+  @media screen and (max-width: 1279px) {
+    padding: 32px 0 30px;
+  }
+
   &__slider {
+    @media screen and (max-width: 1279px) {
+      margin: 0 16px;
+    }
+
     .slick-list {
       overflow: unset;
     }
 
     .slick-arrow {
-      z-index: 1;
-
-      @media screen and (min-width: 1920px) {
-        width: 38px;
-        height: 38px;
-      }
-
-      @media screen and (min-width: 1280px) and (max-width: 1919px) {
-        width: 30px;
-        height: 30px;
-      }
-
-      &::before {
-        font-size: 0;
-        border: solid $black;
-        border-width: 0 3px 3px 0;
-        display: inline-block;
-        padding: 12px;
-        opacity: 1;
-      }
-
       &.slick-next {
         right: -60px;
-        transform: rotate(-45deg);
+
+        @media screen and (max-width: 1279px) {
+          right: -9px;
+        }
       }
 
       &.slick-prev {
         left: -60px;
-        transform: rotate(135deg);
-      }
-    }
 
-    .slick-arrow.slick-disabled {
-      opacity: 0.5;
+        @media screen and (max-width: 1279px) {
+          left: -9px;
+        }
+      }
     }
   }
 
@@ -51,8 +40,9 @@
     transition: all 0.4s ease;
     position: relative;
     border-radius: 16px;
+    display: block;
 
-    @media screen and (min-width: 1920px) {
+    @media screen and (min-width: 1280px) {
       margin: 0 16px;
       width: 463px;
       height: 540px;
@@ -62,6 +52,12 @@
       margin: 0 10px;
       width: 300px;
       height: 350px;
+    }
+
+    @media screen and (max-width: 1279px) {
+      width: 274px;
+      height: 216px;
+      margin: 0 6px;
     }
   }
 
@@ -92,6 +88,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    white-space: initial;
 
     @media screen and (min-width: 1920px) {
       height: 237px;
@@ -101,6 +98,11 @@
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       height: 160px;
       padding: 20px 25px 50px;
+    }
+
+    @media screen and (max-width: 1279px) {
+      height: 89px;
+      padding: 12px;
     }
   }
 
@@ -117,6 +119,10 @@
       font-size: 22px;
       padding-bottom: 8px;
     }
+
+    @media screen and (max-width: 1279px) {
+      font-size: 16px;
+    }
   }
 
   &__text {
@@ -129,50 +135,9 @@
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       font-size: 16px;
     }
-  }
 
-  &__link {
-    font-weight: bold;
-    color: $main;
-    position: absolute;
-    padding-right: 50px;
-    bottom: -5em;
-    transition: bottom 0.3s ease;
-
-    @media screen and (min-width: 1920px) {
-      margin-top: 40px;
-      left: 36px;
-      font-size: 18px;
-    }
-
-    @media screen and (min-width: 1280px) and (max-width: 1919px) {
-      margin-top: 20px;
-      left: 25px;
-      font-size: 14px;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      right: 0;
-      width: 25px;
-      height: 1px;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: $main;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: 50%;
-      border: solid $main;
-      border-width: 0 1px 1px 0;
-      display: inline-block;
-      padding: 2px;
-      cursor: pointer;
-      transform: translateY(-50%) rotate(-45deg);
+    @media screen and (max-width: 1279px) {
+      display: none;
     }
   }
 
@@ -208,10 +173,9 @@
 
   &__item:hover {
     box-shadow: 30px 30px 55px rgba(0, 0, 0, 0.21);
-    transform: scale(1.05);
 
-    .actions-slider__link {
-      bottom: 26px;
+    @media screen and (min-width: 1280px) {
+      transform: scale(1.05);
     }
   }
 
@@ -226,6 +190,10 @@
       margin: 90px auto 0;
     }
 
+    @media screen and (max-width: 1279px) {
+      margin: 32px auto 0;
+    }
+
     .button {
       @media screen and (min-width: 1920px) {
         padding: 17px 88px;
@@ -233,6 +201,10 @@
 
       @media screen and (min-width: 1280px) and (max-width: 1919px) {
         padding: 15px 50px;
+      }
+
+      @media screen and (max-width: 1279px) {
+        padding: 8px 37px;
       }
     }
   }
@@ -254,6 +226,10 @@
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       gap: 32px;
     }
+
+    @media screen and (max-width: 1279px) {
+      gap: 24px;
+    }
   }
 
   &__item {
@@ -270,6 +246,12 @@
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       width: 300px;
       height: 350px;
+    }
+
+    @media screen and (max-width: 1279px) {
+      width: 100%;
+      max-width: 357px;
+      height: 206px;
     }
 
     &:nth-of-type(1),
@@ -301,6 +283,10 @@
   font-family: $muller;
   color: $black;
 
+  @media screen and (max-width: 1279px) {
+    padding-bottom: 40px;
+  }
+
   &__wrap {
     display: grid;
 
@@ -312,6 +298,10 @@
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       grid-gap: 32px;
       grid-template-columns: 50% 1fr;
+    }
+
+    @media screen and (max-width: 1279px) {
+      grid-gap: 20px;
     }
   }
 
@@ -329,6 +319,10 @@
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       padding-bottom: 16px;
     }
+
+    @media screen and (max-width: 1279px) {
+      padding-bottom: 4px;
+    }
   }
 
   &__date {
@@ -341,6 +335,11 @@
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       padding-bottom: 16px;
     }
+
+    @media screen and (max-width: 1279px) {
+      font-size: 12px;
+      padding-bottom: 20px;
+    }
   }
 
   &__text {
@@ -350,6 +349,10 @@
 
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
       font-size: 16px;
+    }
+
+    @media screen and (max-width: 1279px) {
+      font-size: 12px;
     }
   }
 }

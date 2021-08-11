@@ -12,6 +12,15 @@ equipmentSlider.slick({
   arrows: true,
   infinite: false,
   variableWidth: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1,
+        variableWidth: false,
+      },
+    },
+  ],
 });
 
 
@@ -22,4 +31,13 @@ team.slick({
   slidesToScroll: 1,
   arrows: true,
   infinite: false,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1,
+        variableWidth: true,
+      },
+    },
+  ],
 });

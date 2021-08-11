@@ -12,15 +12,14 @@
       @endphp
       @foreach( $actions as $post )
         @php setup_postdata($post) @endphp
-        <div class="actions-slider__item">
+        <a href="@php echo get_post_permalink() @endphp" class="actions-slider__item">
           <div class="actions-slider__img"><img src="@php the_post_thumbnail_url() @endphp" alt="@php the_title() @endphp"></div>
           <div class="actions-slider__info">
             <div class="actions-slider__name">@php the_title() @endphp</div>
             <div class="actions-slider__text">@php the_field('short') @endphp
             </div>
-            <a href="@php echo get_post_permalink() @endphp" class="actions-slider__link">Подробнее</a>
           </div>
-        </div>
+        </a>
       @endforeach
       @php wp_reset_postdata() @endphp
     </div>

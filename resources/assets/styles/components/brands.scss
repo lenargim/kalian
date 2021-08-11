@@ -6,5 +6,25 @@
     grid-gap: 31px;
     grid-template-columns: repeat(9, 1fr);
     padding: 43px 0;
+
+    @media screen and (max-width: 1279px) {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 16px;
+      overflow-x: auto;
+      padding: 23px 0;
+
+      &::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+      }
+
+      .brands__img {
+        min-width: calc(33% - 10px);
+      }
+    }
   }
 }

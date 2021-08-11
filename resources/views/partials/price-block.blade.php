@@ -1,11 +1,11 @@
 <div class="price-block">
   <div class="container">
     <h2 class="title">Прайс на наши кальяны</h2>
-    <div class="price-block__wrap">
+    <div class="price-block__wrap price-block__wrap_slider">
       @php
         global $post;
         $goodsArgs = [
-         'numberposts' => 4,
+         'numberposts' => 8,
          'post_type' => 'goods',
         ];
         $goods = get_posts( $goodsArgs );
@@ -16,7 +16,7 @@
         @if( $terms )
           @php $term = array_shift( $terms ) @endphp
         @endif
-        <div class="price-block__item good-@php echo $term->slug @endphp" data-id="@php the_ID() @endphp">
+        <div class="price-block__item price-block__item_slider good-@php echo $term->slug @endphp" data-id="@php the_ID() @endphp">
           <div class="price-block__img img"><img src="@php the_post_thumbnail_url() @endphp"
                                                  alt="@php the_title() @endphp"></div>
           <div class="price-block__box">
