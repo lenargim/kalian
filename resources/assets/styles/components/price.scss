@@ -14,6 +14,8 @@
       display: block;
 
       @media screen and (max-width: 1279px) {
+        padding-bottom: 0;
+
         .slick-list {
           overflow: unset;
         }
@@ -42,7 +44,7 @@
       }
 
       @media screen and (max-width: 1279px) {
-        margin: 0 -5px;
+        margin: 0 -4px;
       }
     }
 
@@ -69,7 +71,7 @@
       }
 
       @media screen and (max-width: 1279px) {
-        margin: 0 5px;
+        margin: 0 4px;
       }
     }
   }
@@ -286,8 +288,8 @@
 
     @media screen and (max-width: 1279px) {
       bottom: 16px;
-      left: 8px;
-      right: 8px;
+      left: 4px;
+      right: 4px;
     }
   }
 

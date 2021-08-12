@@ -73,7 +73,7 @@ $('.price-block__wrap_slider').slick({
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 2,
       },
     },
   ],
