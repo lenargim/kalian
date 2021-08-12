@@ -127,6 +127,24 @@ function my_sale()
         'supports' => array('title', 'editor', 'thumbnail')
     ));
 
+    register_taxonomy('action_type', 'sale', array(
+        'hierarchical' => false,
+        'labels' => array(
+            'name' => _x('Тип', 'taxonomy general name'),
+            'singular_name' => _x('тип акции', 'taxonomy singular name'),
+            'all_items' => __('Все типы'),
+            'parent_item' => null,
+            'parent_item_colon' => null,
+            'edit_item' => __('Изменть тип'),
+            'update_item' => __('Обновить'),
+            'add_new_item' => __('Добавить тип'),
+            'menu_name' => __('Тип'),
+        ),
+        'show_ui' => true,
+        'query_var' => true,
+        //'rewrite'       => array( 'slug' => 'the_writer' ), // свой слаг в URL
+    ));
+
     register_post_type('goods', array(
         'labels' => array(
             'name' => 'Товары', // Основное название типа записи
