@@ -15,10 +15,10 @@
     width: 77vw;
     left: -100vw;
     top: 0;
-    bottom: 0;
+    bottom: -20px;
     transition: all 0.3s ease;
     z-index: 10;
-    padding: 83px 15px 15px;
+    padding: 83px 15px 35px;
     background: radial-gradient(372.22% 26493.83% at 89.06% -9.26%, #000 0%, #313131 100%);
   }
 
@@ -83,12 +83,8 @@
         font-size: 20px;
       }
 
-      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      @media screen and (max-width: 1919px) {
         font-size: 14px;
-      }
-
-      @media screen and (max-width: 1279px) {
-        font-size: 12px;
       }
     }
 

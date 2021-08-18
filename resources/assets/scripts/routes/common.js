@@ -12,10 +12,16 @@ $('.price-block__sale a').on('click', function(e){
 
 $('.price-block__form-close').on('click', function(){
   $(this).parent('.price-block__form').removeClass('active')
+  $(this).parents('.price-block__item_slider').removeClass('active')
+  $('.slick-list').css('zIndex', 'unset')
 })
 
 $('.price-block__order').on('click', function(){
   $(this).parents('.price-block__box').siblings('.price-block__form').addClass('active')
+  if (window.innerWidth < 1024) {
+    $(this).parents('.price-block__item_slider').addClass('active');
+    $(this).parents('.slick-list').css('zIndex', 4)
+  }
 })
 
 $('.cup-qty').each(function() {

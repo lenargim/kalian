@@ -1,6 +1,12 @@
 .brands {
   background: linear-gradient(269.85deg, #e4e4e4 51.5%, #bcbcbc 126.53%), #fff;
 
+  @media screen and (max-width: 1279px) {
+    .container {
+      padding: 0 8px;
+    }
+  }
+
   &__wrap {
     display: grid;
     grid-gap: 31px;
@@ -9,21 +15,14 @@
 
     @media screen and (max-width: 1279px) {
       display: flex;
-      justify-content: flex-start;
+      flex-wrap: wrap;
+      justify-content: center;
       align-items: center;
-      gap: 16px;
-      overflow-x: auto;
-      padding: 23px 0;
-
-      &::-webkit-scrollbar {
-        display: none;
-        width: 0;
-        height: 0;
-        visibility: hidden;
-      }
+      gap: 16px 9px;
+      padding: 8px 0;
 
       .brands__img {
-        min-width: calc(33% - 10px);
+        width: 53px;
       }
     }
   }
