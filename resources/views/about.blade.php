@@ -46,7 +46,7 @@
           <div class="about-page__slider">
             @while(have_rows('equipment')) @php the_row() @endphp
             <div class="about-page__slider-item">
-              <div class="about-page__slider-img">
+              <div class="about-page__slider-img img">
                 <img src="@php the_sub_field('img'); @endphp" alt="@php the_title() @endphp">
               </div>
               <div class="about-page__slider-info">
@@ -69,11 +69,9 @@
         <div class="container">
           <div class="about-page__team-slider">
             @while(have_rows('team')) @php the_row() @endphp
-            <div class="open-modal">
-              <div class="about-page__team-item">
-                <img src="@php the_sub_field('img') @endphp" alt="@php the_sub_field('name') @endphp">
-                <div class="about-page__team-text">@php the_sub_field('name') @endphp</div>
-              </div>
+            <div class="about-page__team-item" data-fancybox="gallery" data-src="@php the_sub_field('img') @endphp">
+              <img src="@php the_sub_field('img') @endphp" alt="@php the_sub_field('name') @endphp">
+              <div class="about-page__team-text">@php the_sub_field('name') @endphp</div>
             </div>
             @endwhile
             @php wp_reset_postdata() @endphp

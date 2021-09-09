@@ -65,9 +65,7 @@ $('.faq-block__questions-item').not('.active').on('click', function() {
 
 $('.price-block__wrap_slider').slick({
   slidesToShow: 4,
-  slidesToScroll: 1,
   arrows: true,
-  draggable: false,
   infinite: false,
   responsive: [
     {

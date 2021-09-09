@@ -602,3 +602,112 @@
     }
   }
 }
+
+.modal-review {
+  background-color: #fff;
+  padding: 40px 32px 32px;
+  width: 870px;
+
+  &__info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 53px;
+    padding-bottom: 32px;
+  }
+
+  &__img {
+    width: 215px;
+    max-height: 274px;
+  }
+
+  &__name {
+    font-weight: bold;
+    font-size: 36px;
+    padding-bottom: 16px;
+    color: $black;
+  }
+
+  &__exp {
+    font-weight: 600;
+    font-size: 18px;
+    color: #828282;
+    padding-bottom: 24px;
+  }
+
+  &__stars {
+    padding-bottom: 8px;
+  }
+
+  &__rating {
+    font-size: 18px;
+    color: $black;
+
+    span {
+      font-size: 24px;
+    }
+  }
+
+  &__comments {
+    max-height: 420px;
+
+    h3 {
+      padding-bottom: 24px;
+      font-weight: 700;
+      font-size: 24px;
+      color: $black;
+      display: inline-block;
+    }
+  }
+
+  &__comment {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #c5c5c5;
+    margin-bottom: 16px;
+
+    &:last-of-type {
+      margin-bottom: 32px;
+    }
+
+    &-name {
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: 0.01em;
+    }
+
+    &-date {
+      font-size: 18px;
+      color: #bdbdbd;
+    }
+  }
+
+  &__add {
+    padding: 20px 100px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 16px;
+    font-size: 18px;
+  }
+
+  .comment-reply-title {
+    padding-bottom: 19px;
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  &__submit {
+    padding: 20px 93px;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+  }
+
+  .form-submit {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__form {
+    display: none;
+  }
+}

@@ -2,6 +2,7 @@
 //import 'jquery';
 import 'slick-carousel/slick/slick.min';
 import 'jquery-mask-plugin/dist/jquery.mask.min'
+import '@fancyapps/ui/dist/fancybox.umd';
 
 // import local dependencies
 import Router from './util/Router';

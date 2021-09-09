@@ -20,7 +20,7 @@
     <img src="@asset('images/steps-bg.webp')" alt="steps" class="steps__img">
     <div class="container">
       <h2 class="title delivery__steps-title">Доставка</h2>
-      <div class="delivery__steps-desc">Доставка зависит от района и удаленности, зоны доставки можно посмотреть на карте доставки</div>
+      <div class="delivery__steps-desc">Доставка зависит от района и удаленности, зоны доставки можно посмотреть на карте доставки.</div>
     </div>
     @include('partials.steps-box')
     <div class="steps__link">
@@ -38,7 +38,7 @@
         </div>
         <div class="paying__item">
           @include('icon::payment2', ['class' => 'icon'])
-          <span>Оплата на сайте</span>
+          <span>Перевод на карту</span>
         </div>
       </div>
     </div>

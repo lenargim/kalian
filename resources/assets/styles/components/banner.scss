@@ -71,6 +71,7 @@
 
     img {
       height: 100%;
+      margin-left: auto;
     }
   }
 
@@ -94,7 +95,7 @@
   }
 
   &__info {
-    max-width: 395px;
+    max-width: 455px;
     position: absolute;
     background-color: rgba(193, 193, 193, 0.2);
     border-radius: 15px;

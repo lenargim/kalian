@@ -209,6 +209,35 @@ function my_sale()
         'query_var' => true,
         //'rewrite'       => array( 'slug' => 'the_writer' ), // свой слаг в URL
     ));
+
+    register_post_type('shishamen', array(
+        'labels' => array(
+            'name' => 'Кальянщики', // Основное название типа записи
+            'singular_name' => 'Кальянщик', // отдельное название записи типа Book
+            'add_new' => 'Добавить Кальянщика',
+            'add_new_item' => 'Добавить нового Кальянщика',
+            'edit_item' => 'Редактировать Кальянщика',
+            'new_item' => 'Новый Кальянщик',
+            'view_item' => 'Посмотреть Кальянщика',
+            'search_items' => 'Найти Кальянщика',
+            'not_found' => 'Кальянщиков не найдено',
+            'not_found_in_trash' => 'В корзине товаров не найдено',
+            'parent_item_colon' => '',
+            'menu_name' => 'Кальянщики'
+
+        ),
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array('title', 'thumbnail', 'comments')
+    ));
 }
 
 
@@ -307,6 +336,8 @@ function true_loadmore_scripts() {
     wp_register_script('true_loadmore', get_stylesheet_directory_uri() . '/loadmore.js', array( 'jquery' ));
     wp_localize_script('true_loadmore', 'ajaxVar', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ));
     wp_enqueue_script( 'true_loadmore' );
+    wp_register_script( 'yandexapi', 'https://api-maps.yandex.ru/2.1/?apikey=f23778e3-4bf9-42c8-b7fa-87e8712c323e&lang=ru_RU');
+    wp_enqueue_script('yandexapi');
 }
 
 
@@ -366,6 +397,75 @@ function reviews_loadmore() {
     die();
 }
 
+add_action( 'wp_ajax_shishamen', 'shishamen_loadmore' );
+add_action( 'wp_ajax_nopriv_shishamen', 'shishamen_loadmore' );
+
+function shishamen_loadmore() {
+    if(isset($_POST['shishamen_id'])) {
+        $id = $_POST['shishamen_id'];
+    }
+    $shishamen = get_post($id);
+     ?>
+    <div class="modal-review__info">
+        <div class="modal-review__img img">
+          <img src="<?php echo get_the_post_thumbnail_url($id)  ?>" alt="<?php echo $shishamen->post_title; ?>">
+        </div>
+        <div class="modal-review__data">
+            <div class="modal-review__name"><?php echo $shishamen->post_title; ?></div>
+            <div class="modal-review__exp">Стаж: <?php the_field('experience', $id) ?></div>
+            <div class="modal-review__stars"></div>
+            <div class="modal-review__rating"><span>4,2</span> / 5</div>
+        </div>
+    </div>
+    <div class="modal-review__comments">
+        <?php
+        $args = [
+            'post_id' => $id
+        ];
+        $comments = get_comments( $args );
+        if ($comments) {
+            ?><h3>Отзывы:</h3><?php
+        } ?>
+        <?php
+        foreach( $comments as $comment ) {
+            $format = 'd.m.Y';
+            $comment_ID = $comment->comment_ID;
+            ?>
+            <div class="modal-review__comment">
+                <div>
+                    <span class="modal-review__comment-name"><?php echo( $comment->comment_author ); ?></span>
+                    <span class="modal-review__comment-rating"><?php the_field('rating', $comment_ID ); ?></span>
+                    <span class="modal-review__comment-date"><?php echo get_comment_date( $format, $comment_ID ); ?></span>
+                </div>
+                <div class="modal-review__comment-content"><?php echo( $comment->comment_content ); ?></div>
+            </div>
+            <?php
+        };
+        ?>
+    </div>
+    <div class="button modal-review__add">Оставить отзыв</div>
+    <?php
+    $commenter = wp_get_current_commenter();
+    $comments_args = array(
+        'fields'               => [
+            'author' => '<p class="comment-form-author">
+			<input id="author" class="input" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . $html_req . '  placeholder="Имя"/>
+		</p>',
+        ],
+        'label_submit' => 'Отправить отзыв',
+        'title_reply'=>'Оставить отзыв',
+        'comment_notes_before' => '',
+        'comment_notes_after' => '',
+        'comment_field' => '<p class="comment-form-comment"><textarea class="textarea input" id="comment" name="comment" aria-required="true" placeholder="Отзыв" rows="5"></textarea></p>',
+        'class_submit' => 'button modal-review__submit',
+        'class_container' => 'modal-review__form'
+    );
+    comment_form( $comments_args, $id );
+    die();
+}
+
+
+
 function remove_jquery_migrate( $scripts ) {
     if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
         $script = $scripts->registered['jquery'];
@@ -375,3 +475,20 @@ function remove_jquery_migrate( $scripts ) {
     }
 }
 add_action( 'wp_default_scripts', 'remove_jquery_migrate' );
+
+add_filter('comment_form_fields', 'kama_reorder_comment_fields' );
+function kama_reorder_comment_fields( $fields ){
+    $new_fields = array(); // сюда соберем поля в новом порядке
+    $myorder = array('author', 'comment'); // нужный порядок
+    foreach( $myorder as $key ){
+        $new_fields[ $key ] = $fields[ $key ];
+        unset( $fields[ $key ] );
+    }
+
+    // если остались еще какие-то поля добавим их в конец
+    if( $fields )
+        foreach( $fields as $key => $val )
+            $new_fields[ $key ] = $val;
+
+    return $new_fields;
+}

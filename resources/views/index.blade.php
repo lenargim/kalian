@@ -28,6 +28,33 @@
           echo '<div id="loadmore-reviews" class="loadmore"><a href="#" data-max_pages="' . $max_pages . '" data-paged="' . $paged . '">Ещё</a></div>';
         @endphp
       @endif
+      <div class="shishamen">
+        <h2 class="title">Наши кальянщики</h2>
+        <div class="shishamen__wrap">
+          @php
+            global $post;
+            $shishamenArgs = [
+                'numberposts' => 3,
+                'post_type'   => 'shishamen'
+            ];
+            $shishamens = get_posts($shishamenArgs);
+          @endphp
+          @foreach( $shishamens as $post )
+            @php setup_postdata($post) @endphp
+            <div class="shishamen__item">
+              <div class="shishamen__item-img img">
+                <img src="@php the_post_thumbnail_url() @endphp" alt="@php the_title() @endphp">
+              </div>
+              <div class="shishamen__item-name">@php the_title() @endphp</div>
+              <div class="shishamen__item-exp">Стаж: @php the_field('experience') @endphp</div>
+              <div class="shishamen__item-stars"></div>
+              <div class="shishamen__item-rating"><span>4,2</span> / 5</div>
+              <div class="shishamen__item-more button" data-id="@php the_ID() @endphp">Подробнее</div>
+            </div>
+          @endforeach
+          @php wp_reset_postdata() @endphp
+        </div>
+      </div>
     </div>
   </div>
 @endsection

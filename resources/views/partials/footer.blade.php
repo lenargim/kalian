@@ -61,6 +61,10 @@
       <div class="modal-thx__desc">Наш специалист свяжется с Вами <span style="white-space: nowrap">в самое ближайшее время</span></div>
     </div>
   </div>
+  <div class="modal modal-review">
+    <div class="modal__close"></div>
+    <div class="modal-review__box"></div>
+  </div>
 </div>
 <div class="to-top">
   @include('icon::to-top-arrow', ['class' => 'to-top__arrow'])

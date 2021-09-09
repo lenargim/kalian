@@ -27,7 +27,7 @@ $('.price-block__order').on('click', function(){
 $('.cup-qty').each(function() {
   let qty = +parseInt($(this).text(), 10);
   if (qty == 0) {
-  $('.cup-qty').css('visibility', 'hidden')
+  $(this).css('visibility', 'hidden')
   }
   let parent = $(this).parents('.price-block__item');
   parent.find('.input-cups').val(qty);
@@ -233,6 +233,7 @@ function closeModal() {
    $('.overlay').removeClass('active')
     $('.modal').removeClass('active')
     $('.modal-img__box').html('');
+    $('.modal-review__box').html('');
 }
 
 $('.price-block__form-item, .modal-callback__input').on('input', function(){
@@ -346,3 +347,27 @@ $('.price-block__more').on('click', function(){
   info.toggleClass('active');
   info.hasClass('active') ? $(this).siblings('.price-block__mobile').slideDown() : $(this).siblings('.price-block__mobile').slideUp()
 })
+
+$('.shishamen__wrap').slick({
+  slidesToShow: 3,
+  arrows: true,
+  responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+})
+
+$('.modal-review').on( 'click', '.modal-review__add', function(){
+  $(this).hide();
+  $('.modal-review__form').slideDown();
+} )

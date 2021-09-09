@@ -148,6 +148,16 @@
         font-size: 18px;
       }
     }
+
+    &-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+
+      img {
+        height: auto;
+      }
+    }
   }
 }
 
