@@ -710,4 +710,27 @@
   &__form {
     display: none;
   }
+
+  &__hide {
+    color: $main;
+    font-size: 14px;
+    margin-left: auto;
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    top: 30px;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      display: block;
+      border-left: 1px solid $main;
+      border-bottom: 1px solid $main;
+      margin-right: 15px;
+      transform: rotate(135deg);
+    }
+  }
 }

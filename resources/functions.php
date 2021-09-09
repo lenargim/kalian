@@ -420,7 +420,8 @@ function shishamen_loadmore() {
     <div class="modal-review__comments">
         <?php
         $args = [
-            'post_id' => $id
+            'post_id' => $id,
+            'status' => 'approve',
         ];
         $comments = get_comments( $args );
         if ($comments) {
@@ -434,7 +435,7 @@ function shishamen_loadmore() {
             <div class="modal-review__comment">
                 <div>
                     <span class="modal-review__comment-name"><?php echo( $comment->comment_author ); ?></span>
-                    <span class="modal-review__comment-rating"><?php the_field('rating', $comment_ID ); ?></span>
+<!--                    <span class="modal-review__comment-rating">--><?php //the_field('rating', $comment_ID ); ?><!--</span>-->
                     <span class="modal-review__comment-date"><?php echo get_comment_date( $format, $comment_ID ); ?></span>
                 </div>
                 <div class="modal-review__comment-content"><?php echo( $comment->comment_content ); ?></div>
@@ -444,6 +445,7 @@ function shishamen_loadmore() {
         ?>
     </div>
     <div class="button modal-review__add">Оставить отзыв</div>
+    <div class="modal-review__hide"><span>Скрыть</span></div>
     <?php
     $commenter = wp_get_current_commenter();
     $comments_args = array(

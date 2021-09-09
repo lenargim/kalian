@@ -370,4 +370,11 @@ $('.shishamen__wrap').slick({
 $('.modal-review').on( 'click', '.modal-review__add', function(){
   $(this).hide();
   $('.modal-review__form').slideDown();
+  $('.modal-review__hide').css('display', 'flex')
 } )
+
+$('.modal-review').on( 'click', '.modal-review__hide', function() {
+  $('.modal-review__hide').css('display', 'none');
+  $('.modal-review__form').slideUp();
+   $('.modal-review__add').show()
+})
