@@ -12,6 +12,7 @@
                 <div class="banner__link button open-callback">Заказать</div>
               @endif
             </div>
+            @if( get_sub_field('show-block') == true )
             <div class="banner__info">
               <div class="banner__price">от <span>@php the_sub_field('price') @endphp</span> ₽</div>
               <div class="banner__tabak">
@@ -19,6 +20,7 @@
                 @php the_sub_field('tabaki') @endphp
               </div>
             </div>
+            @endif
             @if(wp_is_mobile())
               <div class="banner__link button open-callback">Заказать</div>
             @endif

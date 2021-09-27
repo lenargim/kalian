@@ -57,5 +57,5 @@ jQuery(function($){
         $('.modal-review__box').html(data);
       },
     });
-  } )
+  });
 });

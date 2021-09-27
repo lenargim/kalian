@@ -8,6 +8,13 @@
       что это видео поможет вам принять решение о заказе кальяна именно у нас.
 
     </div>
-    <a href="/faq#covid" class="covid-block__link">Подробнее</a>
+    <div class="covid-block__iframe">
+      <iframe width="100%" height="100%" id="covid" src="https://www.youtube.com/embed/yuIeESIKu9c"
+              title="Anti-Covid-19"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+    <div class="covid-block__link">Подробнее</div>
   </div>
 </div>

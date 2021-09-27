@@ -20,7 +20,7 @@
       </a>
     </li>
     <li>
-      <a href="https://www.instagram.com/Xopoce.ru/" class="reviews-block__item-link" target="_blank">
+      <a href="https://www.instagram.com/vini_smr" class="reviews-block__item-link" target="_blank">
         <img src="@asset('images/review4.png')" alt="">
         <span>Отзывы в Instagram</span>
       </a>

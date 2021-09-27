@@ -34,7 +34,7 @@
     }
 
     @media screen and (max-width: 1279px) {
-      height: calc(100vh - 100px);
+      height: calc(100vh - 350px);
     }
 
     &-wrap {
@@ -68,6 +68,10 @@
     right: 0;
     top: 0;
     bottom: 0;
+
+    @media screen and (max-width: 1279px) {
+      right: -20%;
+    }
 
     img {
       height: 100%;

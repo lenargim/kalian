@@ -46,11 +46,20 @@
     justify-content: flex-start;
 
     @media screen and (max-width: 1279px) {
-      flex-direction: column;
-      align-items: flex-start;
-      padding-bottom: 16px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-      margin-bottom: 16px;
+      display: none;
+    }
+
+    &_mobile {
+      display: none;
+
+      @media screen and (max-width: 1279px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        margin-bottom: 16px;
+      }
     }
 
     li {
@@ -126,6 +135,12 @@
       top: 17px;
     }
 
+    &_desk {
+      @media screen and (max-width: 1279px) {
+        display: none;
+      }
+    }
+
     &-link {
       @media screen and (min-width: 1920px) {
         margin-right: 24px;
@@ -187,6 +202,7 @@
       width: 80%;
       overflow: hidden;
       height: 79px;
+      margin-bottom: 15px;
       border-radius: 5px;
       display: flex;
       align-items: center;
@@ -195,7 +211,7 @@
 
     &-name {
       position: absolute;
-      top: 8px;
+      bottom: 8px;
       left: 7px;
       font-family: $muller;
       font-weight: 700;

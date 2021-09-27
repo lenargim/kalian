@@ -336,8 +336,8 @@ function true_loadmore_scripts() {
     wp_register_script('true_loadmore', get_stylesheet_directory_uri() . '/loadmore.js', array( 'jquery' ));
     wp_localize_script('true_loadmore', 'ajaxVar', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ));
     wp_enqueue_script( 'true_loadmore' );
-    wp_register_script( 'yandexapi', 'https://api-maps.yandex.ru/2.1/?apikey=f23778e3-4bf9-42c8-b7fa-87e8712c323e&lang=ru_RU');
-    wp_enqueue_script('yandexapi');
+    wp_dequeue_style( 'wp-block-library' );
+    wp_dequeue_style( 'wp-block-library-theme' );
 }
 
 
@@ -413,8 +413,7 @@ function shishamen_loadmore() {
         <div class="modal-review__data">
             <div class="modal-review__name"><?php echo $shishamen->post_title; ?></div>
             <div class="modal-review__exp">Стаж: <?php the_field('experience', $id) ?></div>
-            <div class="modal-review__stars"></div>
-            <div class="modal-review__rating"><span>4,2</span> / 5</div>
+            <div class="modal-review__desc"><?php the_field('desc', $id) ?></div>
         </div>
     </div>
     <div class="modal-review__comments">
@@ -493,4 +492,12 @@ function kama_reorder_comment_fields( $fields ){
             $new_fields[ $key ] = $val;
 
     return $new_fields;
+}
+
+
+add_action( 'comment_post', 'new_comment_notify', 15, 2 );
+function new_comment_notify( $comment_ID, $comment_approved ){
+    add_filter( 'comment_post_redirect', function() {
+        return get_home_url() . '/reviews-thx';
+    }, 10, 2 );
 }

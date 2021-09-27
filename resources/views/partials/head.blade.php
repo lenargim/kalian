@@ -10,4 +10,5 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   @php wp_head() @endphp
+  @include('partials.metrika')
 </head>

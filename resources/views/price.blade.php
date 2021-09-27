@@ -118,6 +118,7 @@
               <div class="price-block__coal-amount">Кол-во углей: <span class="coal"></span></div>
             @endif
             <div class="price-block__total">Итого: <span class="total"></span></div>
+            <input type="checkbox" class="check" checked style="display: none">
             <input disabled type="submit" value="Оформить заказ" class="price-block__submit button">
           </form>
         </div>

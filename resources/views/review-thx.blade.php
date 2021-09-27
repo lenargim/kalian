@@ -1,3 +1,9 @@
+<?php
+/**
+ * Template Name: Review thankyou
+ */
+?>
+
 @extends('layouts.app')
 
 @section('content')
@@ -7,34 +13,28 @@
       <div class="reviews-page__wrap">
         <div class="reviews-block__item-box">
           @php
-            global $query_string;
-            query_posts( $query_string .'&posts_per_page=10' );
+            global $post;
+            $reviewsArgs = [
+                'numberposts' => 10,
+                'post_type'   => 'post'
+            ];
+            $reviews = get_posts($reviewsArgs);
           @endphp
-          @while(have_posts()) @php the_post() @endphp
+          @foreach( $reviews as $post )
+            @php setup_postdata($post) @endphp
           <div class="reviews-block__item img open-modal"><img src="@php the_post_thumbnail_url() @endphp" alt="Отзыв"></div>
-          @endwhile
-          @php wp_reset_query() @endphp
-          @php
-            global $wp_query;
-            $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-            $max_pages = $wp_query->max_num_pages;
-          @endphp
+          @endforeach
+          @php wp_reset_postdata() @endphp
         </div>
         @include('partials.reviews-aside')
       </div>
-      {{--    если страница не последняя показать кнопку "еще"   --}}
-      @if( $paged < $max_pages )
-        @php
-          echo '<div id="loadmore-reviews" class="loadmore"><a href="#" data-max_pages="' . $max_pages . '" data-paged="' . $paged . '">Ещё</a></div>';
-        @endphp
-      @endif
       <div class="shishamen">
         <h2 class="title">Наши кальянщики</h2>
         <div class="shishamen__wrap">
           @php
             global $post;
             $shishamenArgs = [
-                'numberposts' => -1,
+                'numberposts' => 3,
                 'post_type'   => 'shishamen'
             ];
             $shishamens = get_posts($shishamenArgs);
@@ -48,8 +48,8 @@
               <div class="shishamen__item-name">@php the_title() @endphp</div>
               <div class="shishamen__item-exp">Стаж: @php the_field('experience') @endphp</div>
               <div class="shishamen__item-desc">@php the_field('desc') @endphp</div>
-{{--              <div class="shishamen__item-stars"></div>--}}
-{{--              <div class="shishamen__item-rating"><span>4,2</span> / 5</div>--}}
+              {{--              <div class="shishamen__item-stars"></div>--}}
+              {{--              <div class="shishamen__item-rating"><span>4,2</span> / 5</div>--}}
               <div class="shishamen__item-more button" data-id="@php the_ID() @endphp">Подробнее</div>
             </div>
           @endforeach
@@ -58,5 +58,21 @@
       </div>
     </div>
   </div>
+  <div class="overlay active">
+    <div class="modal modal-review-thx active">
+      <div class="modal__close"></div>
+      <div class="modal-review-thx__box">
+        @include('icon::modal-thx-review', ['class' => 'icon'])
+        <div class="modal-review-thx__title">Спасибо за Ваш отзыв</div>
+        <div class="modal-review-thx__desc">Ваше мнение очень важно для нас,<br>
+          в скором времени<br>
+          мы опубликуем отзыв на сайте</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    jQuery(window).click(function () {
+      window.location.href = '/';
+    })
+  </script>
 @endsection
-

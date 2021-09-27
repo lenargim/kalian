@@ -46,18 +46,24 @@ actionsSlider.slick({
   ],
 });
 
-$('.faq-block__questions-item').not('.active').on('click', function() {
-  $(this).addClass('active').siblings().removeClass('active');
-  if (window.innerWidth < 1024) {
-    $(this).siblings().remove('.faq-block__answers-item');
-    let clone = $('.faq-block__answers-item').eq($(this).index()).clone();
-    $(this).after( clone );
-    clone.fadeIn()
-
+$('.faq-block__questions-item').on('click', function() {
+  if (window.innerWidth > 1023) {
+   if ( !$(this).hasClass('active') ) {
+     $(this).addClass('active').siblings().removeClass('active');
+     $('.faq-block__answers-item')
+       .hide()
+       .eq($(this).index()).fadeIn();
+   }
   } else {
-    $('.faq-block__answers-item')
-      .hide()
-      .eq($(this).index()).fadeIn();
+    $(this).toggleClass('active').siblings().removeClass('active');
+    $(this).siblings().remove('.faq-block__answers-item');
+    if ( $(this).hasClass('active') ) {
+      let clone = $('.faq-block__answers-item').eq($(this).index()).clone();
+      $(this).after( clone );
+      clone.fadeIn()
+    } else {
+      return
+    }
   }
 
 });
@@ -89,4 +95,9 @@ $('.reviews-block__item-box_slider').slick({
       settings: 'unslick',
     },
   ],
+});
+
+$('.covid-block__link').on( 'click', function () {
+  $(this).siblings('.covid-block__iframe').slideToggle();
+  $(this).text() == 'Подробнее' ? $(this).text('Скрыть') : $(this).text('Подробнее')
 });

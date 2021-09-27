@@ -7,9 +7,10 @@
       @endif
       <div class="footer__side">
         <div class="call">
-          <a href="tel:@php the_field('phone',9) @endphp" class="call__phone">
+          @php $chars = '-() ' @endphp
+          <a href="tel:@php echo preg_replace('/['.$chars.']/', '', get_field('phone', 9)) @endphp" class="call__phone">
             @include('icon::help-operator', ['class' => 'help'])
-            <span href="tel:@php the_field('phone',9) @endphp">@php the_field('phone',9) @endphp</span>
+            <span>@php the_field('phone',9) @endphp</span>
           </a>
           <div class="call__callback open-callback">Заказать звонок</div>
         </div>

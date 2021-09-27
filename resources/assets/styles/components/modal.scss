@@ -28,6 +28,7 @@
   @media screen and (max-width: 1279px) {
     border-radius: 5px;
     width: calc(100vw - 10px);
+    overflow: unset;
   }
 
   &.active {
@@ -55,16 +56,16 @@
     }
 
     @media screen and (max-width: 1279px) {
-      width: 15px;
-      height: 15px;
-      top: 8px;
-      right: 8px;
+      width: 20px;
+      height: 20px;
+      top: -30px;
+      right: 10px;
     }
 
     &::before,
     &::after {
       content: "";
-      height: 1px;
+      height: 2px;
       background-color: #424242;
       transform-origin: left;
       position: absolute;
@@ -79,7 +80,8 @@
       }
 
       @media screen and (max-width: 1279px) {
-        width: 20px;
+        width: 25px;
+        background-color: #fff;
       }
     }
 
@@ -107,7 +109,7 @@
 
       @media screen and (max-width: 1279px) {
         height: auto;
-        max-height: 90vh;
+        max-height: 85vh;
         max-width: 90vw;
       }
     }
@@ -141,6 +143,21 @@
     @media screen and (max-width: 1279px) {
       padding: 32px 10px;
       width: calc(100% - 10px);
+    }
+
+    &__accept-box {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-top: 10px;
+
+      .policy {
+        color: $main;
+      }
+    }
+
+    &__accept {
+      margin-right: 10px;
     }
 
     &__title {
@@ -441,6 +458,14 @@
     .wpcf7-response-output {
       display: none;
     }
+
+    &__button:disabled {
+      opacity: 0.8;
+    }
+
+    &__span {
+      font-size: 17px;
+    }
   }
 }
 
@@ -451,6 +476,20 @@
 
   @media screen and (max-width: 1279px) {
     padding: 32px 10px 24px;
+  }
+
+  &__accept-box {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .policy {
+    color: $main;
+  }
+
+  &__accept {
+    margin-right: 10px;
   }
 
   &__title {
@@ -502,14 +541,12 @@
   &__span {
     display: inline-block;
     font-weight: 500;
-    font-size: 14px;
-    text-align: center;
+    font-size: 16px;
     color: #828282;
     padding-bottom: 24px;
 
     @media screen and (max-width: 1279px) {
       font-size: 12px;
-      text-align: center;
       padding-bottom: 16px;
     }
   }
@@ -606,7 +643,14 @@
 .modal-review {
   background-color: #fff;
   padding: 40px 32px 32px;
-  width: 870px;
+
+  @media screen and (min-width: 1280px) {
+    width: 870px;
+  }
+
+  @media screen and (max-width: 1279px) {
+    padding: 20px 8px 24px;
+  }
 
   &__info {
     display: flex;
@@ -614,11 +658,22 @@
     justify-content: flex-start;
     gap: 53px;
     padding-bottom: 32px;
+
+    @media screen and (max-width: 1279px) {
+      gap: 16px;
+      padding-bottom: 12px;
+    }
   }
 
   &__img {
     width: 215px;
     max-height: 274px;
+    border-radius: 15px;
+
+    @media screen and (max-width: 1279px) {
+      width: 101px;
+      max-height: 128px;
+    }
   }
 
   &__name {
@@ -626,13 +681,33 @@
     font-size: 36px;
     padding-bottom: 16px;
     color: $black;
+
+    @media screen and (max-width: 1279px) {
+      font-size: 18px;
+      padding-bottom: 4.5px;
+    }
   }
 
   &__exp {
     font-weight: 600;
     font-size: 18px;
     color: #828282;
-    padding-bottom: 24px;
+    padding-bottom: 1em;
+
+    @media screen and (max-width: 1279px) {
+      font-size: 12px;
+    }
+  }
+
+  &__desc {
+    font-weight: 600;
+    font-size: 18px;
+    color: $black;
+    padding-bottom: 1em;
+
+    @media screen and (max-width: 1279px) {
+      font-size: 12px;
+    }
   }
 
   &__stars {
@@ -650,6 +725,7 @@
 
   &__comments {
     max-height: 420px;
+    overflow-y: auto;
 
     h3 {
       padding-bottom: 24px;
@@ -657,6 +733,11 @@
       font-size: 24px;
       color: $black;
       display: inline-block;
+
+      @media screen and (max-width: 1279px) {
+        font-size: 14px;
+        padding-bottom: 4.5px;
+      }
     }
   }
 
@@ -673,11 +754,25 @@
       font-weight: 500;
       font-size: 18px;
       letter-spacing: 0.01em;
+
+      @media screen and (max-width: 1279px) {
+        font-size: 12px;
+      }
     }
 
     &-date {
       font-size: 18px;
       color: #bdbdbd;
+
+      @media screen and (max-width: 1279px) {
+        font-size: 12px;
+      }
+    }
+
+    &-content {
+      @media screen and (max-width: 1279px) {
+        font-size: 10px;
+      }
     }
   }
 
@@ -688,23 +783,40 @@
     transform: translateX(-50%);
     border-radius: 16px;
     font-size: 18px;
+
+    @media screen and (max-width: 1279px) {
+      padding: 12px 40px;
+    }
   }
 
   .comment-reply-title {
     padding-bottom: 19px;
     font-weight: 700;
     font-size: 24px;
+
+    @media screen and (max-width: 1279px) {
+      font-size: 14px;
+      padding-bottom: 16px;
+    }
   }
 
   &__submit {
     padding: 20px 93px;
     box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.05);
     border-radius: 16px;
+
+    @media screen and (max-width: 1279px) {
+      padding: 12px 40px;
+    }
   }
 
   .form-submit {
     display: flex;
     justify-content: flex-end;
+
+    @media screen and (max-width: 1279px) {
+      justify-content: center;
+    }
   }
 
   &__form {
@@ -731,6 +843,52 @@
       border-bottom: 1px solid $main;
       margin-right: 15px;
       transform: rotate(135deg);
+    }
+  }
+}
+
+.modal-review-thx {
+  background-color: #fff;
+  padding: 80px;
+
+  @media screen and (max-width: 1279px) {
+    padding: 40px 30px 30px;
+  }
+
+  .icon {
+    display: block;
+    margin: 0 auto 40px;
+
+    @media screen and (max-width: 1279px) {
+      width: 68px;
+      height: 68px;
+      margin-bottom: 37px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+    color: $black;
+    padding-bottom: 24px;
+
+    @media screen and (max-width: 1279px) {
+      text-align: center;
+      font-size: 24px;
+      padding-bottom: 12px;
+    }
+  }
+
+  &__desc {
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    color: #828282;
+
+    @media screen and (max-width: 1279px) {
+      font-size: 16px;
+      text-align: center;
     }
   }
 }

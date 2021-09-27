@@ -9,7 +9,12 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
-    @media screen and (max-width: 1279px) {
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      grid-template-columns: repeat(3, 1fr);
+      padding-bottom: 45px;
+    }
+
+    @media screen and (max-width: 767px) {
       grid-template-columns: repeat(2, 1fr);
       padding-bottom: 30px;
     }
@@ -119,6 +124,14 @@
     .tobacco,
     .set {
       height: 3.9em;
+    }
+  }
+
+  .good-fruit,
+  .good-rent {
+    .addition-title,
+    .addition-desc {
+      visibility: hidden;
     }
   }
 
@@ -292,7 +305,7 @@
     }
 
     @media screen and (max-width: 1279px) {
-      bottom: 16px;
+      bottom: 10px;
       left: 4px;
       right: 4px;
     }
@@ -304,7 +317,7 @@
     &-actual {
       font-weight: 900;
       display: inline-block;
-      color: $main;
+      color: $black;
       white-space: nowrap;
 
       @media screen and (min-width: 1920px) {
@@ -319,7 +332,6 @@
 
       @media screen and (min-width: 375px) and (max-width: 1279px) {
         font-size: 17px;
-        color: $black;
       }
 
       @media screen and (max-width: 374px) {

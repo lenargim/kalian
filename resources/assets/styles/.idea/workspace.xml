@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6449499b-5f80-4078-bc89-7b0a816e0ba5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../images/covid-bg.webp" beforeDir="false" afterPath="$PROJECT_DIR$/../images/covid-bg.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scripts/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scripts/routes/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/routes/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scripts/routes/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/routes/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/breadcrumbs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/breadcrumbs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/covid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/covid.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/faq.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/faq.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/map.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/map.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/modal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/policy.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/policy.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/price.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/price.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/reviews.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/reviews.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../loadmore.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../loadmore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../views/partials/covid-block.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../views/partials/covid-block.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../views/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../views/partials/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../views/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../views/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../views/partials/map.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../views/partials/map.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../views/partials/steps.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../views/partials/steps.blade.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1ya1JPLq8Q70bTQKB2kPvGy7Zae" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6449499b-5f80-4078-bc89-7b0a816e0ba5" name="Default Changelist" comment="" />
+      <created>1632474812446</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1632474812446</updated>
+      <workItem from="1632474813793" duration="21000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

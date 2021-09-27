@@ -2,9 +2,10 @@ export default {
   init() {
   },
   finalize() {
-    $('.tel').mask('+7(Z00) 000-00-00', { translation: { 'Z': { pattern: /[0-79]/ } } })
   },
 };
+
+$('.tel').mask('+7(Z00) 000-00-00', { translation: { 'Z': { pattern: /[0-79]/ } } })
 
 $('.price-block__sale a').on('click', function(e){
  e.preventDefault();
@@ -247,12 +248,17 @@ $('.price-block__form-item, .modal-callback__input').on('input', function(){
 })
 
 function checkForm(form) {
-  if ( form.find('.tel').hasClass('filled') &&  form.find('.name').hasClass('filled')  ) {
+  if ( form.find('.tel').hasClass('filled') &&  form.find('.name').hasClass('filled') && form.find('.check').prop('checked') == true ) {
     form.find('input[type="submit"]').prop('disabled', false);
   } else {
     form.find('input[type="submit"]').prop('disabled', true);
   }
 }
+
+$('.check').on('change', function(){
+  let form = $(this).parents('form');
+  checkForm(form);
+});
 
 $('.price-block__form').on('submit', function(e){
   e.preventDefault();
@@ -286,7 +292,14 @@ $('.price-block__form').on('submit', function(e){
   form.find('.tel').val( item.find('.tel').val() )
   form.find('.modal-order__form-price').val( item.find('.total').text() )
   form.find('.modal-order__form-input, .modal-order__form-title').attr('readonly', true);
+  form.find('.modal-order__button').prop('disabled', true)
 })
+
+$('.modal-order__accept').on('change', function() {
+  let form = $(this).parents('form');
+  let btn = form.find('.modal-order__button');
+  btn.prop('disabled', !$(this).prop('checked'));
+} )
 
 $('.modal-order__back').on('click', function(){
   let id = $(this).attr('data-id');

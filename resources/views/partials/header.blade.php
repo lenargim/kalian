@@ -1,7 +1,7 @@
 <header class="header">
   <div class="container">
     <div class="header__wrap">
-      @if(wp_is_mobile())
+
         <div class="burger">
           <span></span>
         </div>
@@ -20,14 +20,14 @@
             </a>
           </div>
           @if (has_nav_menu('primary_navigation'))
-            {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'header__menu']) !!}
+            {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'header__menu header__menu_mobile']) !!}
           @endif
           <div class="header__actions">
             <h3 class="header__actions-title">Акции</h3>
             @php
               global $post;
               $args = [
-                'numberposts' => 1,
+                'numberposts' => 3,
                 'post_type' => 'sale',
                 'action_type' => 'menu',
               ];
@@ -43,10 +43,10 @@
             @php wp_reset_postdata() @endphp
           </div>
         </div>
-      @endif
+
       <a class="logo img" href="/"><img src="@asset('images/logo.png')" alt="kalian-smr"></a>
-      @if(!wp_is_mobile())
-        <div class="socials">
+
+        <div class="socials socials_desk">
           <a class="socials-link" href="https://www.instagram.com/@php the_field('instagram',9) @endphp"
              target="_blank">
             @include('icon::instagram', ['class' => 'icon'])
@@ -62,11 +62,12 @@
         @if (has_nav_menu('primary_navigation'))
           {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'header__menu']) !!}
         @endif
-      @endif
+
       <div class="call">
-        <a href="tel:@php the_field('phone',9) @endphp" class="call__phone">
+        @php $chars = '-() ' @endphp
+        <a href="tel:@php echo preg_replace('/['.$chars.']/', '', get_field('phone', 9)) @endphp" class="call__phone">
           @include('icon::help-operator', ['class' => 'help'])
-          <span href="tel:@php the_field('phone',9) @endphp">@php the_field('phone',9) @endphp</span>
+          <span>@php the_field('phone',9) @endphp</span>
         </a>
         <div class="call__callback open-callback">Заказать звонок</div>
       </div>

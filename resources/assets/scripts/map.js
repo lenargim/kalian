@@ -1,9 +1,15 @@
 ymaps.ready(init);
 
 function init() {
-  var myMap = new ymaps.Map('map', {
-      center: [53.322054, 50.070795],
-      zoom: 10,
+  let localZoom;
+  if (window.innerWidth > 767) {
+     localZoom = 10.2;
+  } else {
+    localZoom = 9;
+  }
+  let myMap = new ymaps.Map('map', {
+      center: [53.313348, 50.170194],
+      zoom: localZoom,
       controls: ['geolocationControl', 'searchControl'],
     }),
     deliveryPoint = new ymaps.GeoObject({
@@ -110,7 +116,7 @@ function init() {
   }
 
   jQuery.ajax({
-    url: 'data.geojson',
+    url: '/data.geojson',
     dataType: 'json',
     success: onZonesLoad,
   });
