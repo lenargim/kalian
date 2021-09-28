@@ -391,3 +391,9 @@ $('.modal-review').on( 'click', '.modal-review__hide', function() {
   $('.modal-review__form').slideUp();
    $('.modal-review__add').show()
 })
+
+$('.price-block__form-item.tel').on('change', function(){
+  if(window.innerWidth < 1279 && $(this).val().length == 17 && $(this).siblings('.price-block__form-item').hasClass('filled') ) {
+    $(this).blur()
+  }
+});

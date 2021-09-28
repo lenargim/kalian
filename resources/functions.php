@@ -176,6 +176,7 @@ function my_sale()
 
     register_taxonomy('sale_type', 'goods', array(
         'hierarchical' => false,
+        'publicly_queryable'  => false,
         'labels' => array(
             'name' => _x('Скидки', 'taxonomy general name'),
             'singular_name' => _x('Скидка', 'taxonomy singular name'),

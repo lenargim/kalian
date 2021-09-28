@@ -45,8 +45,8 @@
                 <span class="time">@php the_field('time') @endphp</span>
                 <span>Табак:</span>
                 <span class="tobacco">@php the_field('tabak') @endphp</span>
-                <span>Доп забивка:</span>
-                <span><span class="addition">@php the_field('extra') @endphp</span>₽</span>
+                <span class="addition-title">Доп забивка:</span>
+                <span class="addition-desc"><span class="addition">@php the_field('extra') @endphp</span>₽</span>
               </div>
               <div class="price-block__set">
                 <span>Комплект:</span>
@@ -74,8 +74,10 @@
                   <div class="price-block__info">
                     <span>Уголь:</span>
                     <span class="coal">@php the_field('qty') @endphp шт</span>
-                    <span>Доп забивка:</span>
-                    <span><span class="addition">@php the_field('extra') @endphp</span>₽</span>
+                    <span class="addition-title">Доп забивка:</span>
+                    <span class="addition-desc"><span class="addition">@php the_field('extra') @endphp</span>₽</span>
+                    <span>Комплект:</span>
+                    <span class="set">@php the_field('set') @endphp</span>
                   </div>
                 </div>
                 <div class="price-block__more"></div>
@@ -159,8 +161,8 @@
                 <span class="time">@php the_field('time') @endphp</span>
                 <span>Табак:</span>
                 <span class="tobacco">@php the_field('tabak') @endphp</span>
-                <span>Доп забивка:</span>
-                <span><span class="addition">@php the_field('extra') @endphp</span>₽</span>
+                <span class="addition-title">Доп забивка:</span>
+                <span class="addition-desc"><span class="addition">@php the_field('extra') @endphp</span>₽</span>
               </div>
               <div class="price-block__set">
                 <span>Комплект:</span>
@@ -188,8 +190,8 @@
                   <div class="price-block__info">
                     <span>Уголь:</span>
                     <span class="coal">@php the_field('qty') @endphp шт</span>
-                    <span>Доп забивка:</span>
-                    <span><span class="addition">@php the_field('extra') @endphp</span>₽</span>
+                    <span class="addition-title">Доп забивка:</span>
+                    <span class="addition-desc"><span class="addition">@php the_field('extra') @endphp</span>₽</span>
                   </div>
                 </div>
                 <div class="price-block__more"></div>
@@ -222,6 +224,7 @@
             <input type="tel" class="tel price-block__form-item input" placeholder="Номер телефона">
             <div class="price-block__coal-amount">Кол-во углей: <span class="coal"></span></div>
             <div class="price-block__total">Итого: <span class="total"></span></div>
+            <input type="checkbox" class="check" checked style="display: none">
             <input disabled type="submit" value="Оформить заказ" class="price-block__submit button">
           </form>
         </div>

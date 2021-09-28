@@ -127,14 +127,6 @@
     }
   }
 
-  .good-fruit,
-  .good-rent {
-    .addition-title,
-    .addition-desc {
-      visibility: hidden;
-    }
-  }
-
   &__name {
     font-family: $muller;
     font-weight: 700;
@@ -418,7 +410,7 @@
         left: 5px;
         right: 5px;
         top: 5px;
-        bottom: 5px;
+        //bottom: 5px;
       }
     }
 
@@ -856,6 +848,27 @@
 
     &__desc {
       text-align: left;
+    }
+  }
+}
+
+.good-fruit,
+.good-rent {
+  .addition-title,
+  .addition-desc {
+    visibility: hidden;
+
+    @media screen and (max-width: 1279px) {
+      display: none;
+    }
+  }
+
+  &.price-block__item_slider {
+    .addition-title,
+    .addition-desc {
+      @media screen and (max-width: 1279px) {
+        display: inline;
+      }
     }
   }
 }

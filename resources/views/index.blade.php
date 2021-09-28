@@ -48,8 +48,6 @@
               <div class="shishamen__item-name">@php the_title() @endphp</div>
               <div class="shishamen__item-exp">Стаж: @php the_field('experience') @endphp</div>
               <div class="shishamen__item-desc">@php the_field('desc') @endphp</div>
-{{--              <div class="shishamen__item-stars"></div>--}}
-{{--              <div class="shishamen__item-rating"><span>4,2</span> / 5</div>--}}
               <div class="shishamen__item-more button" data-id="@php the_ID() @endphp">Подробнее</div>
             </div>
           @endforeach
@@ -59,4 +57,3 @@
     </div>
   </div>
 @endsection
-
