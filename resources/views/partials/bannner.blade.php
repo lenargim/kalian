@@ -4,7 +4,7 @@
       @while(have_rows('banner')) @php the_row() @endphp
       <div class="banner__item-wrap">
         <div class="banner__item">
-          <div class="banner__img"><img src="@php the_sub_field('img') @endphp" alt="banner"></div>
+          <div class="banner__img"><img src="@php the_sub_field('img') @endphp" alt="@php the_sub_field('title') @endphp"></div>
           <div class="container">
             <div class="banner__wrap">
               <div class="banner__title">@php the_sub_field('title') @endphp</div>
@@ -14,11 +14,12 @@
             </div>
             @if( get_sub_field('show-block') == true )
             <div class="banner__info">
-              <div class="banner__price">от <span>@php the_sub_field('price') @endphp</span> ₽</div>
+              <div class="banner__price">от <span>@php the_sub_field('price') @endphp</span></div>
               <div class="banner__tabak">
-                <p>Табаки:</p>
+                <p class="heading">Табаки:</p>
                 @php the_sub_field('tabaki') @endphp
               </div>
+              <div class="banner__extra">@php the_sub_field('extra') @endphp</div>
             </div>
             @endif
             @if(wp_is_mobile())

@@ -25,7 +25,10 @@ slider.slick({
   arrows: true,
   appendArrows: $('.banner__arrow-box'),
   draggable: false,
-  infinite: false,
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  pauseOnHover: false,
 });
 
 let actionsSlider = $('.actions-slider__slider');
@@ -36,6 +39,7 @@ actionsSlider.slick({
   arrows: true,
   variableWidth: true,
   infinite: false,
+  swipeToSlide: true,
   responsive: [
     {
       breakpoint: 1024,
@@ -73,6 +77,7 @@ $('.price-block__wrap_slider').slick({
   slidesToShow: 4,
   arrows: true,
   infinite: false,
+  swipeToSlide: true,
   responsive: [
     {
       breakpoint: 1024,
@@ -89,6 +94,7 @@ $('.reviews-block__item-box_slider').slick({
   arrows: true,
   infinite: false,
   mobileFirst: true,
+  swipeToSlide: true,
   responsive: [
     {
       breakpoint: 1024,

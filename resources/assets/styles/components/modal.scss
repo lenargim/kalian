@@ -10,9 +10,7 @@
   overflow-y: auto;
 
   &.active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     z-index: 10;
   }
 }
@@ -24,11 +22,13 @@
   border-radius: 15px;
   overflow: hidden;
   position: relative;
+  margin: 30px auto;
 
   @media screen and (max-width: 1279px) {
     border-radius: 5px;
     width: calc(100vw - 10px);
     overflow: unset;
+    margin-top: 50px;
   }
 
   &.active {
@@ -76,7 +76,7 @@
       }
 
       @media screen and (min-width: 1280px) and (max-width: 1919px) {
-        width: 33px;
+        width: 31px;
       }
 
       @media screen and (max-width: 1279px) {
@@ -149,7 +149,7 @@
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
-      margin-top: 10px;
+      margin-top: 23px;
 
       .policy {
         color: $main;
@@ -157,7 +157,12 @@
     }
 
     &__accept {
-      margin-right: 10px;
+      position: absolute;
+      opacity: 0;
+
+      &:checked + label::after {
+        content: "";
+      }
     }
 
     &__title {
@@ -464,7 +469,51 @@
     }
 
     &__span {
-      font-size: 17px;
+      display: inline-block;
+      font-weight: 500;
+      font-size: 18px;
+      color: #828282;
+      padding-bottom: 24px;
+      position: relative;
+      padding-left: 40px;
+
+      &::before {
+        content: "";
+        width: 25px;
+        height: 25px;
+        border: 1px solid $black;
+        border-radius: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @media screen and (max-width: 1279px) {
+          width: 22px;
+          height: 22px;
+        }
+      }
+
+      &::after {
+        border-left: 3px solid $black;
+        border-top: 3px solid $black;
+        width: 8px;
+        height: 16px;
+        transform: rotate(-135deg);
+        position: absolute;
+        top: 2px;
+        left: 8px;
+
+        @media screen and (max-width: 1279px) {
+          border-width: 2px;
+          width: 6px;
+          height: 14px;
+        }
+      }
+
+      @media screen and (max-width: 1279px) {
+        font-size: 12px;
+        padding-bottom: 16px;
+      }
     }
   }
 }
@@ -486,10 +535,6 @@
 
   .policy {
     color: $main;
-  }
-
-  &__accept {
-    margin-right: 10px;
   }
 
   &__title {
@@ -541,13 +586,57 @@
   &__span {
     display: inline-block;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     color: #828282;
     padding-bottom: 24px;
+    position: relative;
+    padding-left: 40px;
+
+    &::before {
+      content: "";
+      width: 25px;
+      height: 25px;
+      border: 1px solid $black;
+      border-radius: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      @media screen and (max-width: 1279px) {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    &::after {
+      border-left: 3px solid $black;
+      border-top: 3px solid $black;
+      width: 8px;
+      height: 16px;
+      transform: rotate(-135deg);
+      position: absolute;
+      top: 2px;
+      left: 8px;
+
+      @media screen and (max-width: 1279px) {
+        border-width: 2px;
+        width: 6px;
+        height: 14px;
+      }
+    }
 
     @media screen and (max-width: 1279px) {
       font-size: 12px;
       padding-bottom: 16px;
+    }
+  }
+
+  &__accept {
+    position: absolute;
+    opacity: 0;
+
+    &:checked + label::after {
+      content: "";
     }
   }
 

@@ -34,7 +34,7 @@
     }
 
     @media screen and (max-width: 1279px) {
-      height: calc(100vh - 350px);
+      min-height: calc(100vh - 300px);
     }
 
     &-wrap {
@@ -59,6 +59,7 @@
 
     @media screen and (max-width: 1279px) {
       font-size: 28px;
+      line-height: 1.2;
       text-align: center;
     }
   }
@@ -95,6 +96,7 @@
       left: 50%;
       transform: translateX(-50%);
       padding: 8px 43px;
+      margin-bottom: 15px;
     }
   }
 
@@ -141,7 +143,7 @@
 
     @media screen and (max-width: 1279px) {
       font-size: 18px;
-      padding-bottom: 8px;
+      padding-bottom: 4px;
     }
 
     span {
@@ -160,7 +162,7 @@
   }
 
   &__tabak {
-    padding-top: 28px;
+    padding: 28px 0 16px;
     font-weight: 500;
 
     @media screen and (min-width: 1920px) {
@@ -177,10 +179,29 @@
     }
 
     p {
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 18px;
-      font-weight: 400;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 500;
       padding-bottom: 1em;
+
+      @media screen and (max-width: 1279px) {
+        font-size: 16px;
+      }
+
+      &:last-of-type {
+        padding-bottom: 0;
+      }
+
+      &.heading {
+        font-weight: 400;
+        font-size: 18px;
+        opacity: 0.5;
+        padding-bottom: 16px;
+
+        @media screen and (min-width: 1279px) {
+          font-size: 12px;
+        }
+      }
     }
 
     @media screen and (min-width: 1024px) {
@@ -188,6 +209,11 @@
         white-space: nowrap;
       }
     }
+  }
+
+  &__extra {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.53);
   }
 
   &__arrow-box {
@@ -218,11 +244,7 @@
     }
 
     @media screen and (max-width: 1279px) {
-      width: 85px;
-      height: 25px;
-      padding: 7px 13px;
-      border-radius: 55px;
-      bottom: 24px;
+      display: none;
     }
 
     .slick-arrow {
@@ -312,8 +334,8 @@
 
       @media screen and (max-width: 1279px) {
         flex-wrap: wrap;
-        grid-gap: 32px 10px;
-        padding: 24px 0;
+        grid-gap: 10px;
+        padding: 15px 0;
       }
     }
 
@@ -358,6 +380,10 @@
 
       @media screen and (min-width: 1280px) and (max-width: 1919px) {
         font-size: 20px;
+      }
+
+      @media screen and (max-width: 1279px) {
+        font-size: 14px;
       }
     }
   }
