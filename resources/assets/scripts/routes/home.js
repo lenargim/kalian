@@ -27,14 +27,34 @@ slider.slick({
   draggable: false,
   infinite: true,
   autoplay: true,
-  autoplaySpeed: 5000,
+  lazyLoad: 'ondemand',
+  autoplaySpeed: 7000,
   pauseOnHover: false,
 });
 
-let actionsSlider = $('.actions-slider__slider');
+let actionsSlider = $('.home .actions-slider__slider');
 
 actionsSlider.slick({
-  slidesToShow: 4,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  arrows: true,
+  variableWidth: true,
+  infinite: false,
+  swipeToSlide: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+  ],
+});
+
+let landingSlider = $('.landing .actions-slider__slider');
+
+landingSlider.slick({
+  slidesToShow: 2,
   slidesToScroll: 1,
   arrows: true,
   variableWidth: true,

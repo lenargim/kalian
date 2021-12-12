@@ -1,7 +1,6 @@
 <header class="header">
   <div class="container">
     <div class="header__wrap">
-
         <div class="burger">
           <span></span>
         </div>
@@ -24,27 +23,32 @@
           @endif
           <div class="header__actions">
             <h3 class="header__actions-title">Акции</h3>
-            @php
-              global $post;
-              $args = [
-                'numberposts' => 3,
-                'post_type' => 'sale',
-                'action_type' => 'menu',
-              ];
-              $actions = get_posts( $args );
-            @endphp
-            @foreach( $actions as $post )
-              @php setup_postdata($post) @endphp
-            <a href="@php echo get_post_permalink() @endphp" class="header__actions-link">
-              <img class="header__actions-img" src="@php the_post_thumbnail_url() @endphp" alt="@php the_title() @endphp">
-              <span class="header__actions-name">@php the_title() @endphp</span>
+{{--            @php--}}
+{{--              global $post;--}}
+{{--              $args = [--}}
+{{--                'numberposts' => 3,--}}
+{{--                'post_type' => 'sale',--}}
+{{--                'action_type' => 'menu',--}}
+{{--              ];--}}
+{{--              $actions = get_posts( $args );--}}
+{{--            @endphp--}}
+{{--            @foreach( $actions as $post )--}}
+{{--              @php setup_postdata($post) @endphp--}}
+{{--            <a href="@php echo get_post_permalink() @endphp" class="header__actions-link">--}}
+{{--              <img class="header__actions-img" src="@php the_post_thumbnail_url() @endphp" alt="@php the_title() @endphp">--}}
+{{--              <span class="header__actions-name">@php the_title() @endphp</span>--}}
+{{--            </a>--}}
+{{--            @endforeach--}}
+{{--            @php wp_reset_postdata() @endphp--}}
+
+            <a href="/new-year" class="header__actions-ny">
+              <img src="@asset('images/new-year/new-year-header.png')">
+              <span>Заказать кальян<br>в новогоднюю<br>ночь</span>
             </a>
-            @endforeach
-            @php wp_reset_postdata() @endphp
           </div>
         </div>
 
-      <a class="logo img" href="/"><img src="@asset('images/logo.png')" alt="kalian-smr"></a>
+      <a class="logo img" href="/"><img src="@asset('images/new-year/logo-new-year.png')" alt="kalian-smr"></a>
 
         <div class="socials socials_desk">
           <a class="socials-link" href="https://www.instagram.com/@php the_field('instagram',9) @endphp"
@@ -63,6 +67,10 @@
           {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'header__menu']) !!}
         @endif
 
+      <a href="/new-year" class="header__ny">
+        <img src="@asset('images/new-year/new-year-header.png')">
+        <span>Кальян<br>в Новый год</span>
+      </a>
       <div class="call">
         @php $chars = '-() ' @endphp
         <a href="tel:@php echo preg_replace('/['.$chars.']/', '', get_field('phone', 9)) @endphp" class="call__phone">
@@ -74,3 +82,13 @@
     </div>
   </div>
 </header>
+@if(!is_page('new-year'))
+<a href="/new-year" class="direct">
+  <div class="container">
+    <div class="direct__wrap">
+      <img src="@asset('images/new-year/new-year-header.png')">
+      <span>Заказать кальян<br>в новогоднюю ночь</span>
+    </div>
+  </div>
+</a>
+@endif

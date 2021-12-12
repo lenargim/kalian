@@ -303,11 +303,15 @@ function wpcf7_send_mail_telegram($cf7)
             $time = $_POST['text-5'];
             $delivery = urlencode($_POST['text-6']);
             $total = $_POST['text-9'];
+            $nyFruit = $_POST['text-11'];
+            $nyPresent = $_POST['text-10'];
             $arr = [
                 'Город:' => 'Самара',
                 'Тема:' => 'Заказ',
                 'Кальян:' => $shisha . '. Количество: ' . $shisha_qty,
                 'Чаши:' => $cups_qty,
+                'Фруктовый подарок на Н.Г:' => $nyFruit,
+                '3 чаша за репост:' => $nyPresent,
                 'Уголь:' => $coal,
                 'Время:' => $time,
                 'Доставка:' => $delivery,
@@ -316,9 +320,10 @@ function wpcf7_send_mail_telegram($cf7)
                 'Итого:' => $total
             ];
         } else {
+            $theme = $_POST['text-12'];
             $arr = [
                 'Город:' => 'Самара',
-                'Тема:' => 'Обратный звонок',
+                'Переход с кнопки:' => $theme,
                 'Имя:' => $name,
                 'Телефон:' => $phone,
             ];
@@ -349,7 +354,6 @@ function actions_loadmore() {
     $args = [
         'posts_per_page' => 99,
         'post_status' => 'publish',
-        'post_type' => 'sale',
         'offset' => 9,
     ];
     query_posts($args);
@@ -502,3 +506,7 @@ function new_comment_notify( $comment_ID, $comment_approved ){
         return get_home_url() . '/reviews-thx';
     }, 10, 2 );
 }
+
+// REMOVE EMOJI ICONS
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');

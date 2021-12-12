@@ -75,9 +75,11 @@
   }
 
   &__info {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 39px 30px;
+    flex-wrap: wrap;
 
     @media screen and (min-width: 1920px) {
       padding: 156px 0;
@@ -89,14 +91,14 @@
 
     @media screen and (max-width: 1279px) {
       padding: 24px 0 32px;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 32px 10px;
+      gap: 32px 10px;
     }
 
     &-item {
       text-align: center;
       font-weight: 500;
       letter-spacing: 0.01em;
+      width: calc(25% - 22.5px);
 
       @media screen and (min-width: 1920px) {
         font-size: 24px;
@@ -108,6 +110,7 @@
 
       @media screen and (max-width: 1279px) {
         font-size: 14px;
+        width: calc(50% - 5px);
       }
 
       .icon {

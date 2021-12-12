@@ -39,10 +39,6 @@
     align-items: center;
     white-space: nowrap;
 
-    @media screen and (max-width: 1279px) {
-      white-space: initial;
-    }
-
     &::after {
       content: "";
       width: 100%;

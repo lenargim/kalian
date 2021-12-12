@@ -5,7 +5,7 @@ export default {
   },
 };
 
-$('.tel').mask('+7(Z00) 000-00-00', { translation: { 'Z': { pattern: /[0-79]/ } } })
+$('.tel').mask('+7(Z00)000-00-00', { translation: { 'Z': { pattern: /[0-79]/ } } })
 
 $('.price-block__sale a').on('click', function(e){
  e.preventDefault();
@@ -40,6 +40,8 @@ $('.cup-qty').each(function() {
     changeCoalQty(parent, qty);
   } else if ( parent.hasClass('good-fruit') ) {
     changeCoalFruit(parent, qty);
+  } else if ( parent.hasClass('good-ny') ) {
+    changeTotalNY(parent, qty);
   }
 })
 
@@ -65,8 +67,12 @@ $('.input-keyup').on('input keyup', function(){
     $(this).val(1)
   }
   if ( $(this).hasClass('input-shisha')  ) {
-  parent.hasClass('good-fruit') ? changeCoalFruit(parent, qty) : changeCupsQty(parent, qty)
-  } else if ( $(this).hasClass('input-cups') ) {
+    if (parent.hasClass('good-fruit')) {
+      changeCoalFruit(parent, qty)
+    } else if ( parent.hasClass('good-rent') || parent.hasClass('good-main') ) {
+      changeCupsQty(parent, qty)
+    }
+  } else if ( $(this).hasClass('input-cups') && parent.hasClass('good-rent') || parent.hasClass('good-main') || parent.hasClass('good-fruit')  ) {
     changeCoalQty(parent, qty)
   } else {
      changeCoalFruit(parent, qty);
@@ -209,6 +215,63 @@ function changeTotalFruit(parent) {
 }
 
 
+$('.change-price-ny').on('click', function(e){
+  e.preventDefault();
+  let parent = $(this).parents('.price-block__item');
+  let input = $(this).siblings('.input-keyup-ny');
+  let qty = input.val()
+    if ( $(this).hasClass('btn-plus') ) {
+        input.val( ++qty )
+      } else if (qty > 1) {
+        input.val( --qty )
+      }
+  changeTotalNY(parent, qty);
+})
+
+$('.input-keyup-ny').on('input keyup change', function(){
+  let parent = $(this).parents('.price-block__item');
+  changeTotalNY(parent);
+})
+
+
+function changeTotalNY(parent) {
+  let shisha = parent.find('.input-shisha-ny').val();
+  let price = parent.find('.calc-price').html();
+  let total = parent.find('.price-block__total');
+  let cups = parent.find('.input-cups').val();
+  let shishaSum = undefined;
+  let fruitSum = undefined;
+  let cupsSum = undefined;
+  let totalSum = undefined;
+  let extraCupsPrice = parent.find('.addition').text();
+  let coef = parent.find('.input-cups').attr('coef');
+  if (shisha*coef > cups) {
+    cups = shisha*coef
+    parent.find('.input-cups').val(cups)
+  }
+  let extraCupsQty = cups - coef * shisha;
+  cupsSum = extraCupsQty * extraCupsPrice;
+  if (parent.hasClass('good-preorder') ) {
+    shishaSum = (+price * shisha) - ( shisha-1 )*600;
+    let fruit = parent.find('.input-fruit-ny').val();
+      if (shisha>fruit) {
+      fruit = shisha
+        parent.find('.input-fruit-ny').val(fruit)
+      }
+    fruitSum = 1500*(+fruit-shisha);
+    totalSum = shishaSum + fruitSum + cupsSum;
+  } else {
+    shishaSum = (+price * shisha) - ( shisha-1 )*300;
+    totalSum = shishaSum + cupsSum;
+  }
+
+  total.html(`Итого: <span class="total">${totalSum}₽</span>`);
+  if (!totalSum || totalSum == 'NaN₽' ) {
+    total.html('<span class="total">Уточните заполнив форму</span>')
+  }
+}
+
+
 
 /*  Конец Калькулятор */
 
@@ -241,7 +304,7 @@ $('.price-block__form-item, .modal-callback__input').on('input', function(){
   if ( $(this).hasClass('name') )  {
     $(this).val().length > 1 ? $(this).addClass('filled') : $(this).removeClass('filled');
   } else if ( $(this).hasClass('tel') ) {
-    $(this).val().length == 17 ? $(this).addClass('filled') : $(this).removeClass('filled')
+    $(this).val().length == 16 ? $(this).addClass('filled') : $(this).removeClass('filled')
   }
   let form = $(this).parents('form');
   checkForm(form);
@@ -270,19 +333,39 @@ $('.price-block__form').on('submit', function(e){
   $('.modal-order__back').attr('data-id', id);
   form.find('.modal-order__form-input, .modal-order__form-title').attr('readonly', false);
   form.find('.modal-order__form-title').val( item.find('.price-block__name').text() )
-  form.find('.shisha').val( item.find('.input-shisha').val() + ' шт' )
+  if ( item.find('.input-shisha').val() ) {
+    form.find('.shisha').val( item.find('.input-shisha').val() + ' шт' )
+  } else {
+    form.find('.shisha').val( item.find('.input-shisha-ny').val() + ' шт' )
+  }
+
   if ( item.hasClass('good-main') ) {
     form.find('.cups').val( item.find('.input-cups').val() + ' шт' )
   } else if ( item.hasClass('good-fruit') ) {
     form.find('.cups').val( item.find('.input-shisha').val() + ' шт' )
-  } else {
+  } else if ( item.hasClass('good-ny') ) {
+    form.find('.cups').val( item.find('.input-cups').val() + ' шт' )
+    } else {
     form.find('.cups').val( 'Нет' )
   }
-  if ( item.hasClass('good-main') || item.hasClass('good-fruit') ) {
+  if ( item.hasClass('good-main') || item.hasClass('good-fruit') || item.hasClass('good-ny') ) {
     form.find('.coal').val( item.find('.price-block__coal-amount .coal').text() )
   } else {
     form.find('.coal').val( 'Нет' )
   }
+
+  if ( item.hasClass('good-preorder') ) {
+    form.find('.fruit-ny').val(item.find('.input-fruit-ny').val() + ' шт')
+  } else {
+    form.find('.fruit-ny').val('Нет')
+  }
+
+  if ( item.hasClass('good-no-preorder') ) {
+  item.find('.present-checkbox').prop('checked') ? form.find('.present-cup').val('Да') : form.find('.present-cup').val('Нет')
+  } else {
+    form.find('.present-cup').val('Нет')
+  }
+
   form.find('.time').val( item.find('.time').text() )
   form.find('.tabak').val( item.find('.tobacco').text() )
   let delivery = item.find('.input-delivery').prop('checked');
@@ -328,6 +411,8 @@ $('.modal-callback__submit').prop('disabled', true)
 $('.open-callback').on('click', function(){
   $('.modal-callback').addClass('active');
     $('.overlay').addClass('active');
+    let theme = $(this).text()
+    $('.modal-callback.active').find('.modal-theme').val(theme);
 })
 
 $('.to-top').on('click', function () {
@@ -393,7 +478,80 @@ $('.modal-review').on( 'click', '.modal-review__hide', function() {
 })
 
 $('.price-block__form-item.tel').on('change', function(){
-  if(window.innerWidth < 1279 && $(this).val().length == 17 && $(this).siblings('.price-block__form-item').hasClass('filled') ) {
+  if(window.innerWidth < 1279 && $(this).val().length == 16 && $(this).siblings('.price-block__form-item').hasClass('filled') ) {
     $(this).blur()
   }
 });
+
+let nySlider = $('.ny-actions__slider');
+nySlider.slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  arrows: true,
+  variableWidth: true,
+  infinite: false,
+  swipeToSlide: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+  ],
+});
+
+
+let nyPhotos = $('.ny-photos__slider');
+nyPhotos.slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  arrows: true,
+  variableWidth: true,
+  infinite: false,
+  swipeToSlide: true,
+  responsive: [
+    {
+      breakpoint: 1799,
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+    {
+      breakpoint: 1279,
+      settings: {
+        slidesToShow: 1,
+        variableWidth: false,
+      },
+    },
+  ],
+});
+
+let nyPrice = $('.ny-price__block');
+
+nyPrice.slick({
+ slidesToShow: 4,
+ slidesToScroll: 1,
+ arrows: true,
+ infinite: false,
+ swipeToSlide: true,
+ responsive: [
+   {
+     breakpoint: 1279,
+     settings: {
+       slidesToShow: 2,
+       slidesToScroll: 2,
+       swipeToSlide: false,
+     },
+   },
+ ],
+});
+
+nyPrice.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+  let span = $('.ny-price__wrap-title span:first-of-type')
+  nextSlide == 2 ? span.text('Без предзаказа') : span.text('Предзаказ*')
+  $(this).find('.price-block__form').removeClass('active')
+  $(this).find('.price-block__item_slider').removeClass('active')
+  $(this).find('.slick-list').css('zIndex', 'unset')
+});
+

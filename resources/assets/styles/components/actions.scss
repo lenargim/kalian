@@ -143,7 +143,7 @@
 
   &__item:first-of-type {
     @media screen and (min-width: 1920px) {
-      width: 683px;
+      width: 700px;
     }
 
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
@@ -206,6 +206,40 @@
       @media screen and (max-width: 1279px) {
         padding: 8px 37px;
       }
+    }
+  }
+}
+
+.landing {
+  .actions-slider__item {
+    @media screen and (min-width: 1280px) {
+      opacity: 0;
+      transition: all 0.2s ease;
+      margin: 0 24px;
+      pointer-events: none;
+    }
+
+    @media screen and (min-width: 1920px) {
+      width: 666px;
+    }
+
+    @media screen and (min-width: 1280px) and (max-width: 1919px) {
+      width: 444px;
+    }
+
+    &:nth-of-type(odd) {
+      @media screen and (min-width: 1920px) {
+        width: 1005px;
+      }
+
+      @media screen and (min-width: 1280px) and (max-width: 1919px) {
+        width: 678px;
+      }
+    }
+
+    &.slick-active {
+      opacity: 1;
+      pointer-events: initial;
     }
   }
 }

@@ -21,19 +21,43 @@
       <div class="about-page__info">
         <div class="about-page__info-item">
           @include('icon::about1', ['class' => 'icon'])
-          <span>Работаем <span class="orange">24/7</span><br>с <span class="orange">2015</span> года</span>
+          <span><span class="orange">Шестилетний опыт</span> позволяет называть себя профессионалами</span>
         </div>
         <div class="about-page__info-item">
           @include('icon::about2', ['class' => 'icon'])
-          <span>Доставим<br>за <span class="orange">30-40</span> мин</span>
+          <span>Работаем <br><span class="orange">24/7</span></span>
         </div>
         <div class="about-page__info-item">
           @include('icon::about3', ['class' => 'icon'])
-          <span>С собой более<br><span class="orange">40 разных вкусов</span></span>
+          <span><span class="orange">Честная и понятная цена.</span> Никаких допов, все включено</span>
         </div>
         <div class="about-page__info-item">
           @include('icon::about4', ['class' => 'icon'])
-          <span>Гарантируем качество<br><span class="orange">100%</span></span>
+          <span>Мы <span class="orange">слушаем и слышим</span> своих клиентов</span>
+        </div>
+        <div class="about-page__info-item">
+          @include('icon::about5', ['class' => 'icon'])
+          <span>Мы дорожим <br>своей <span class="orange">репутацией</span></span>
+        </div>
+        <div class="about-page__info-item">
+          @include('icon::about6', ['class' => 'icon'])
+          <span>Мы ставим <span class="orange">жесткие стандарты качества</span> в отборе каждого кальянщика</span>
+        </div>
+        <div class="about-page__info-item">
+          @include('icon::about7', ['class' => 'icon'])
+          <span>Понятная <br><span class="orange">бонусная система</span></span>
+        </div>
+        <div class="about-page__info-item">
+          @include('icon::about8', ['class' => 'icon'])
+          <span><span class="orange">Честность и добросовестность</span> наши основные принципы</span>
+        </div>
+        <div class="about-page__info-item">
+          @include('icon::about9', ['class' => 'icon'])
+          <span>Всегда боле <span class="orange">35-40 банок табака</span> <br>с разными вкусами, а это тонна миксов</span>
+        </div>
+        <div class="about-page__info-item">
+          @include('icon::about10', ['class' => 'icon'])
+          <span>Мы никогда <span class="orange">не говорим "нет"</span><br>нашим клиентам</span>
         </div>
       </div>
     </div>

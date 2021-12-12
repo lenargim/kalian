@@ -193,6 +193,14 @@
     color: #4f4f4f;
     grid-gap: 0.5em 5px;
 
+    & > span {
+      line-height: 20px;
+
+      @media screen and (max-width: 767px) {
+        line-height: 13px;
+      }
+    }
+
     @media screen and (min-width: 1920px) {
       font-size: 16px;
       grid-template-columns: 104px 1fr;
@@ -209,7 +217,7 @@
       padding-bottom: 2px;
     }
 
-    span:nth-of-type(2n) {
+    & > span:nth-of-type(2n) {
       font-weight: 600;
       font-size: 12px;
       padding-bottom: 6px;
@@ -306,6 +314,13 @@
   &__price {
     letter-spacing: 0.02em;
 
+    @media screen and (max-width: 1279px) {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
     &-actual {
       font-weight: 900;
       display: inline-block;
@@ -347,7 +362,8 @@
       }
 
       @media screen and (max-width: 1279px) {
-        display: none;
+        font-size: 9px;
+        color: #111;
       }
     }
   }
@@ -478,8 +494,9 @@
     }
 
     &-row {
+      gap: 7px;
       display: flex;
-      align-items: center;
+      align-items: stretch;
 
       @media screen and (min-width: 1920px) {
         justify-content: space-between;
@@ -509,11 +526,12 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    flex-basis: 0;
+    flex-grow: 1;
 
     @media screen and (min-width: 1920px) {
-      width: calc(50% - 9px);
       border-radius: 16px;
-      padding: 8px 25px;
+      padding: 8px 17px;
     }
 
     @media screen and (min-width: 1280px) and (max-width: 1919px) {
@@ -539,7 +557,7 @@
       color: #323232;
       display: block;
       width: 100%;
-      font-size: 12px;
+      font-size: 10px;
 
       @media screen and (min-width: 1920px) {
         padding-bottom: 4px;
@@ -555,7 +573,7 @@
     }
 
     input {
-      width: 3em;
+      width: 2em;
       background-color: transparent;
       font-weight: 500;
       font-size: 18px;
@@ -567,6 +585,7 @@
       border: none;
       font-weight: 500;
       font-size: 18px;
+      padding: 0;
       color: #323232;
       cursor: pointer;
       background-color: transparent;
@@ -806,6 +825,7 @@
       max-width: unset;
       right: 0;
       left: unset;
+      overflow-y: auto;
     }
 
     &.slick-current .price-block__form {

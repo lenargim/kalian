@@ -8,7 +8,7 @@
       </a>
     </li>
     <li>
-      <a href="https://uslugi.yandex.ru/profile/Vinipykh-1544079" class="reviews-block__item-link" target="_blank">
+      <a href="https://uslugi.yandex.ru/search?action=addReview&profile=Vinipykh-1783745" class="reviews-block__item-link" target="_blank">
         <img src="@asset('images/review2.png')" alt="">
         <span>Отзывы на Яндекс-услугах</span>
       </a>

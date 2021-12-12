@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1b6d7845-a713-4443-82ec-975ad9c7d121" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../assets/images/price/price1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/images/price/price1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/price/price4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/images/price/price4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/scripts/routes/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/scripts/routes/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/styles/components/banner.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/styles/components/banner.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/styles/components/breadcrumbs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/styles/components/breadcrumbs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/partials/bannner.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/bannner.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/price.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/price.blade.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1zPO7SewLIpvpQggtVvRzPsxDH0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1b6d7845-a713-4443-82ec-975ad9c7d121" name="Default Changelist" comment="" />
+      <created>1634046088997</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1634046088997</updated>
+      <workItem from="1634046090350" duration="27000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

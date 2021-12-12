@@ -10,7 +10,9 @@
           query_posts( $query_string .'&posts_per_page=9' );
         @endphp
         @while( have_posts() ) @php the_post() @endphp
+        @php $terms = get_the_terms( $post->ID, 'action_type' ) @endphp
         <a href="@php echo get_post_permalink() @endphp" class="actions-page__item">
+
           <div class="actions-slider__img"><img src="@php the_post_thumbnail_url() @endphp"
                                                 alt="@php the_title() @endphp"></div>
           <div class="actions-slider__info">

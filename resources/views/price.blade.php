@@ -85,6 +85,9 @@
                   <div class="price-block__price">
                     <span class="price-block__price-actual"><span
                         class="calc-price">@php the_field('price') @endphp</span> ₽</span>
+                    @if( get_field('old_price') )
+                      <span class="price-block__price-old">@php the_field('old_price') @endphp ₽</span>
+                    @endif
                   </div>
                   <div class="price-block__order button">Заказать</div>
                 </div>
@@ -192,6 +195,8 @@
                     <span class="coal">@php the_field('qty') @endphp шт</span>
                     <span class="addition-title">Доп забивка:</span>
                     <span class="addition-desc"><span class="addition">@php the_field('extra') @endphp</span>₽</span>
+                    <span>Комплект:</span>
+                    <span class="set">@php the_field('set') @endphp</span>
                   </div>
                 </div>
                 <div class="price-block__more"></div>
@@ -199,6 +204,9 @@
                   <div class="price-block__price">
                     <span class="price-block__price-actual"><span
                         class="calc-price">@php the_field('price') @endphp</span> ₽</span>
+                    @if( get_field('old_price') )
+                      <span class="price-block__price-old">@php the_field('old_price') @endphp ₽</span>
+                    @endif
                   </div>
                   <div class="price-block__order button">Заказать</div>
                 </div>

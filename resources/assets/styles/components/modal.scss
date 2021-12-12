@@ -266,7 +266,7 @@
         display: grid;
 
         @media screen and (min-width: 1920px) {
-          grid-template-columns: 325px 266px;
+          grid-template-columns: 325px 1fr;
           grid-gap: 0 12px;
         }
 
@@ -479,8 +479,8 @@
 
       &::before {
         content: "";
-        width: 25px;
-        height: 25px;
+        width: 1em;
+        height: 1em;
         border: 1px solid $black;
         border-radius: 5px;
         position: absolute;
@@ -497,11 +497,11 @@
         border-left: 3px solid $black;
         border-top: 3px solid $black;
         width: 8px;
-        height: 16px;
+        height: 15px;
         transform: rotate(-135deg);
         position: absolute;
-        top: 2px;
-        left: 8px;
+        top: 0;
+        left: 6px;
 
         @media screen and (max-width: 1279px) {
           border-width: 2px;

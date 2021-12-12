@@ -7,6 +7,7 @@
         $goodsArgs = [
          'numberposts' => -1,
          'post_type' => 'goods',
+         'good_type' => 'main, rent, fruit',
         ];
         $goods = get_posts( $goodsArgs );
       @endphp

@@ -1,7 +1,7 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__wrap">
-      <a class="logo" href="/"><img src="@asset('images/logo.png')" alt="kalian-smr"></a>
+      <a class="logo" href="/"><img src="@asset('images/new-year/logo-new-year.png')" alt="kalian-smr"></a>
       @if (has_nav_menu('footer'))
         {!! wp_nav_menu(['menu' => 'footer', 'menu_class' => 'footer__menu']) !!}
       @endif

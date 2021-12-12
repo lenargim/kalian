@@ -42,7 +42,7 @@ section {
     max-width: 1200px;
   }
 
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 1279px) {
     max-width: unset;
   }
 }
@@ -130,7 +130,7 @@ main.main {
   background-color: $colorBg;
 
   @media screen and (max-width: 1279px) {
-    padding-top: 55px;
+    padding-top: 99px;
   }
 }
 
