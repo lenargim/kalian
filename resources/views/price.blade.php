@@ -56,7 +56,7 @@
                 <div class="price-block__price">
                   <span class="price-block__price-actual"><span
                       class="calc-price">@php the_field('price') @endphp</span> ₽</span>
-                  @if( get_field('old_price') )
+                  @if( get_field('old_price') && get_field('is_sale') == true )
                     <span class="price-block__price-old">@php the_field('old_price') @endphp ₽</span>
                   @endif
                 </div>
@@ -85,7 +85,7 @@
                   <div class="price-block__price">
                     <span class="price-block__price-actual"><span
                         class="calc-price">@php the_field('price') @endphp</span> ₽</span>
-                    @if( get_field('old_price') )
+                    @if( get_field('old_price') && get_field('is_sale') == true )
                       <span class="price-block__price-old">@php the_field('old_price') @endphp ₽</span>
                     @endif
                   </div>
@@ -175,7 +175,7 @@
                 <div class="price-block__price">
                   <span class="price-block__price-actual"><span
                       class="calc-price">@php the_field('price') @endphp</span> ₽</span>
-                  @if( get_field('old_price') )
+                  @if( get_field('old_price') && get_field('is_sale') == true )
                     <span class="price-block__price-old">@php the_field('old_price') @endphp ₽</span>
                   @endif
                 </div>
@@ -204,7 +204,7 @@
                   <div class="price-block__price">
                     <span class="price-block__price-actual"><span
                         class="calc-price">@php the_field('price') @endphp</span> ₽</span>
-                    @if( get_field('old_price') )
+                    @if( get_field('old_price') && get_field('is_sale') == true )
                       <span class="price-block__price-old">@php the_field('old_price') @endphp ₽</span>
                     @endif
                   </div>
