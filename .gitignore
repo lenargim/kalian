@@ -8,3 +8,5 @@ yarn-error.log
 /vendor
 resources/assets/config-local.json
 resources/assets/images/price/
+.idea/
+composer.lock
