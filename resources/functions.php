@@ -510,3 +510,18 @@ function new_comment_notify( $comment_ID, $comment_approved ){
 // REMOVE EMOJI ICONS
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
+
+add_filter( 'webpc_dir_name', function( $path, $directory ) {
+    if ( $directory !== 'uploads' ) {
+        return $path;
+    }
+    return 'app/uploads';
+}, 10, 2 );
+
+
+add_filter( 'webpc_dir_name', function( $path, $directory ) {
+    if ( $directory !== 'webp' ) {
+        return $path;
+    }
+    return 'app/uploads-webpc';
+}, 10, 2 );

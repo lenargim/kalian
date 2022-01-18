@@ -6,6 +6,9 @@
         </div>
         <div class="header__mobile">
           <div class="socials">
+            <a href="tel:@php echo preg_replace('/[^0-9]/', '', get_field('phone', 9)) @endphp" class="socials-phone">
+              @include('icon::socials-phone')
+            </a>
             <a class="socials-link" href="https://www.instagram.com/@php the_field('instagram',9) @endphp"
                target="_blank">
               @include('icon::instagram', ['class' => 'icon'])
