@@ -6,7 +6,8 @@
         </div>
         <div class="header__mobile">
           <div class="socials">
-            <a href="tel:@php echo preg_replace('/[^0-9]/', '', get_field('phone', 9)) @endphp" class="socials-phone">
+            @php $chars = '-() ' @endphp
+            <a href="tel:@php echo preg_replace('/['.$chars.']/', '', get_field('phone', 9)) @endphp" class="socials-phone">
               @include('icon::socials-phone')
             </a>
             <a class="socials-link" href="https://www.instagram.com/@php the_field('instagram',9) @endphp"
@@ -24,6 +25,18 @@
           @if (has_nav_menu('primary_navigation'))
             {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'header__menu header__menu_mobile']) !!}
           @endif
+          <div class="city city_mobile">
+            <div class="city__current">
+              @include('icon::map')
+              <span>Самара</span>
+            </div>
+            <div class="city__choose">
+              <span>Выберите ваш город</span>
+              <nav>
+                <li><a class="city__link" href="https://tlt.kalian-smr.ru/" target="_blank">Тольятти</a></li>
+              </nav>
+            </div>
+          </div>
           <div class="header__actions">
             <h3 class="header__actions-title">Акции</h3>
             @php
@@ -64,8 +77,19 @@
         @if (has_nav_menu('primary_navigation'))
           {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'header__menu']) !!}
         @endif
+      <div class="city city_desktop">
+        <div class="city__current">
+          @include('icon::map')
+          <span>Самара</span>
+        </div>
+        <div class="city__choose">
+          <span>Выберите ваш город</span>
+          <nav>
+            <li><a class="city__link" href="https://tlt.kalian-smr.ru/" target="_blank">Тольятти</a></li>
+          </nav>
+        </div>
+      </div>
       <div class="call">
-        @php $chars = '-() ' @endphp
         <a href="tel:@php echo preg_replace('/['.$chars.']/', '', get_field('phone', 9)) @endphp" class="call__phone">
           @include('icon::help-operator', ['class' => 'help'])
           <span>@php the_field('phone',9) @endphp</span>
