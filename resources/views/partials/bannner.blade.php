@@ -12,8 +12,16 @@
               @if(get_sub_field('desc'))
                 <div class="banner__desc">@php the_sub_field('desc') @endphp</div>
               @endif
-              @if(!wp_is_mobile())
-                <div class="banner__link button open-callback">Заказать</div>
+              @if(!wp_is_mobile() && get_sub_field('add-button'))
+                @if(get_sub_field('button-type') == 'Модальное окно')
+                  <div class="banner__link button open-callback">@php the_sub_field('button-text') @endphp</div>
+                @elseif(get_sub_field('button-type') == 'Телеграм')
+                  <a href="tg://resolve?domain=@php the_sub_field('button-link') @endphp" target="_blank"
+                     class="banner__link button">@php the_sub_field('button-text') @endphp</a>
+                @elseif(get_sub_field('button-type') == 'Ссылка')
+                  <a href="@php the_sub_field('button-link') @endphp" target="_blank"
+                     class="banner__link button">@php the_sub_field('button-text') @endphp</a>
+                @endif
               @endif
             </div>
             @if( get_sub_field('show-block') == true )
@@ -26,8 +34,16 @@
                 <div class="banner__extra">@php the_sub_field('extra') @endphp</div>
               </div>
             @endif
-            @if(wp_is_mobile())
-              <div class="banner__link button open-callback">Заказать</div>
+            @if(wp_is_mobile() && get_sub_field('add-button'))
+              @if(get_sub_field('button-type') == 'Модальное окно')
+                <div class="banner__link button open-callback">@php the_sub_field('button-text') @endphp</div>
+              @elseif(get_sub_field('button-type') == 'Телеграм')
+                <a href="tg://resolve?domain=@php the_sub_field('button-link') @endphp" target="_blank"
+                   class="banner__link button">@php the_sub_field('button-text') @endphp</a>
+              @elseif(get_sub_field('button-type') == 'Ссылка')
+                <a href="@php the_sub_field('button-link') @endphp" target="_blank"
+                   class="banner__link button">@php the_sub_field('button-text') @endphp</a>
+              @endif
             @endif
           </div>
         </div>
