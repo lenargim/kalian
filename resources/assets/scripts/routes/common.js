@@ -411,7 +411,7 @@ $('.modal-callback__submit').prop('disabled', true)
 $('.open-callback').on('click', function(){
   $('.modal-callback').addClass('active');
     $('.overlay').addClass('active');
-    let theme = $(this).text()
+    let theme = $(this).data('title')
     $('.modal-callback.active').find('.modal-theme').val(theme);
 })
 

@@ -14,7 +14,7 @@
               @endif
               @if(!wp_is_mobile() && get_sub_field('add-button'))
                 @if(get_sub_field('button-type') == 'Модальное окно')
-                  <div class="banner__link button open-callback">@php the_sub_field('button-text') @endphp</div>
+                  <div class="banner__link button open-callback" data-title="@php the_sub_field('banner-callback') @endphp">@php the_sub_field('button-text') @endphp</div>
                 @elseif(get_sub_field('button-type') == 'Телеграм')
                   <a href="tg://resolve?domain=@php the_sub_field('button-link') @endphp" target="_blank"
                      class="banner__link button">@php the_sub_field('button-text') @endphp</a>
@@ -36,7 +36,7 @@
             @endif
             @if(wp_is_mobile() && get_sub_field('add-button'))
               @if(get_sub_field('button-type') == 'Модальное окно')
-                <div class="banner__link button open-callback">@php the_sub_field('button-text') @endphp</div>
+                <div class="banner__link button open-callback" data-title="@php the_sub_field('banner-callback') @endphp">@php the_sub_field('button-text') @endphp</div>
               @elseif(get_sub_field('button-type') == 'Телеграм')
                 <a href="tg://resolve?domain=@php the_sub_field('button-link') @endphp" target="_blank"
                    class="banner__link button">@php the_sub_field('button-text') @endphp</a>

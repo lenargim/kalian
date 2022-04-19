@@ -18,7 +18,7 @@
           </div>
           <div class="ny-banner__absolute">@php the_field('banner-absolute') @endphp</div>
         </div>
-        <div class="banner__link ny-banner__button button open-callback">@php the_field('banner-button') @endphp</div>
+        <div class="banner__link ny-banner__button button open-callback" data-title="@php the_field('banner-button') @endphp">@php the_field('banner-button') @endphp</div>
       </div>
     </div>
     <div class="ny-banner__after" style="background-image: url(@asset('images/new-year/trees.png');)"></div>
@@ -49,7 +49,7 @@
           <div class="ny-why__text">Гарантируем качество</div>
         </div>
       </div>
-      <div class="ny-why__button button open-callback">@php the_field('why-button') @endphp</div>
+      <div class="ny-why__button button open-callback" data-title="@php the_field('why-button') @endphp">@php the_field('why-button') @endphp</div>
     </div>
   </div>
   <div class="ny-actions">
@@ -329,7 +329,7 @@
           </div>
         </div>
       </div>
-      <div class="ny-how__button button open-callback">Забронировать кальян</div>
+      <div class="ny-how__button button open-callback" data-title="Забронировать кальян">Забронировать кальян</div>
     </div>
   </div>
   <div class="ny-photos">

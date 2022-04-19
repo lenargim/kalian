@@ -2,13 +2,108 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b6d7845-a713-4443-82ec-975ad9c7d121" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../assets/images/price/price1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/images/price/price1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assets/images/price/price4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/images/price/price4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assets/scripts/routes/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/scripts/routes/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/about-sample.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/about.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/150rub.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/150rub.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/action-1.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/action-1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/action-2.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/action-2.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/action-3-1.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/action-3-1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/action-4.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/action-4.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/action1.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/action1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/action2.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/action2.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/action3.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/action3.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/darim sytki.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/granat.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/mond.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/mond.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/second.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/stor.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/actions/stor.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/banner.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/banner.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/brand1.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/brand2.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/brand3.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/brand4.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/brand5.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/brand6.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/brand7.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/brand8.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/brand9.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/covid-bg.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/favicon/android-chrome-192x192.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/favicon/android-chrome-512x512.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/favicon/apple-touch-icon.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/favicon/favicon-16x16.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/favicon/favicon-32x32.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/favicon/mstile-150x150.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/logo.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/new-year/ant-design_gift-filled.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/new-year/banner-new-year.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/new-year/how-bg.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/new-year/ic_baseline-cottage.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/new-year/logo-new-year-big.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/new-year/logo-new-year.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/new-year/new-year-header.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/new-year/slider1.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/new-year/slider2.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/new-year/slider3.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/new-year/slider4.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/new-year/trees.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/new-year/why-bg.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/new-year/why1.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/new-year/why2.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/new-year/why3.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/new-year/why4.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/new-year/why5.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/price/price1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/price/price2.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/price/price3.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/price/price4.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/price/price5.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/price/price6.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/price/price7.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/price/price8.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/review1.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/review2.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/review3.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/review4.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/reviews/review1.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/reviews/review1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/reviews/review2.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/reviews/review2.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/reviews/review3.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/reviews/review3.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/reviews/review4.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/reviews/review4.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/reviews/review5.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/reviews/review5.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/reviews/review6.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/reviews/review6.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/reviews/review7.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/reviews/review7.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/reviews/review8.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/reviews/review8.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/reviews/review9.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/reviews/review9.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/steps-bg.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/images/steps-bg.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/scripts/routes/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/scripts/routes/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/styles/components/actions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/styles/components/actions.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../assets/styles/components/banner.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/styles/components/banner.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assets/styles/components/breadcrumbs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/styles/components/breadcrumbs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new-year.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/new-year.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/partials/bannner.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/bannner.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/price.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/price.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/single.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +141,7 @@
       <option name="presentableId" value="Default" />
       <updated>1634046088997</updated>
       <workItem from="1634046090350" duration="27000" />
+      <workItem from="1645306820713" duration="41000" />
     </task>
     <servers />
   </component>

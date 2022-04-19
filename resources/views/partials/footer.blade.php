@@ -12,7 +12,7 @@
             @include('icon::help-operator', ['class' => 'help'])
             <span>@php the_field('phone',9) @endphp</span>
           </a>
-          <div class="call__callback open-callback">Заказать звонок</div>
+          <div class="call__callback open-callback" data-title="Футер">Заказать звонок</div>
         </div>
         <div class="socials">
           <a class="socials-link" href="https://www.instagram.com/@php the_field('instagram',9) @endphp"

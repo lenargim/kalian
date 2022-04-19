@@ -94,7 +94,7 @@
           @include('icon::help-operator', ['class' => 'help'])
           <span>@php the_field('phone',9) @endphp</span>
         </a>
-        <div class="call__callback open-callback">Заказать звонок</div>
+        <div class="call__callback open-callback" data-title="Шапка">Заказать звонок</div>
       </div>
     </div>
   </div>

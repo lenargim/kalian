@@ -15,6 +15,7 @@
           <h1>{{ the_title() }}</h1>
           <div class="action-detailed__date">Дата проведения: @php the_field('date') @endphp</div>
           <div class="action-detailed__text">{{ the_content() }}</div>
+          <div class="action-detailed__button button open-callback" data-title="Акция: {{ the_title() }}">Заказать</div>
         </div>
       </div>
     </div>
